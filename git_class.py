@@ -45,7 +45,7 @@ class GitClass(object):
 
     """
 
-    def __init__(self, repo_dir="."):
+    def __init__(self, repo_dir=".", **kwargs):
 
         """Method:  __init__
 
@@ -60,7 +60,7 @@ class GitClass(object):
         self.gitcmd = None
         self.repo_dir = repo_dir
 
-    def create_repo(self, repo_dir=None):
+    def create_repo(self, repo_dir=None, **kwargs):
 
         """Method:  create_repo
 
@@ -76,7 +76,7 @@ class GitClass(object):
 
         self.gitrepo = git.Repo(self.repo_dir)
 
-    def create_cmd(self):
+    def create_cmd(self, **kwargs):
 
         """Method:  create_cmd
 
@@ -125,7 +125,7 @@ class GitMerge(GitClass):
 
     """
 
-    def __init__(self, repo_name, git_dir, url, branch, mod_branch):
+    def __init__(self, repo_name, git_dir, url, branch, mod_branch, **kwargs):
 
         """Method:  __init__
 
