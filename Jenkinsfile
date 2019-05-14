@@ -76,7 +76,7 @@ pipeline {
                                 "recursive": false,
                                 "excludePatterns": [],
                                 "target": "generic-local/highpoint/git-lib/"
-                            },
+                            }
                         ]
                     }"""
                     server.upload(uploadSpec)
