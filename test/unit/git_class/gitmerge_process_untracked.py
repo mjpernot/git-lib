@@ -158,7 +158,7 @@ class UnitTest(unittest.TestCase):
         self.new_list1 = []
         self.new_list2 = ["file1"]
 
-    @mock.patch("merge_repo.gen_libs")
+    @mock.patch("git_class.gen_libs")
     def test_process_add_option(self, mock_lib):
 
         """Function:  test_process_add_option
@@ -181,7 +181,7 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual(self.gitr.new_files, self.new_list2)
 
-    @mock.patch("merge_repo.gen_libs")
+    @mock.patch("git_class.gen_libs")
     def test_process_remove_option(self, mock_lib):
 
         """Function:  test_process_remove_option
@@ -204,7 +204,7 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual(self.gitr.new_files, self.new_list2)
 
-    @mock.patch("merge_repo.gen_libs")
+    @mock.patch("git_class.gen_libs")
     def test_process_newfiles_list(self, mock_lib):
 
         """Function:  test_process_newfiles_list
@@ -227,7 +227,7 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual(self.gitr.new_files, self.new_list2)
 
-    @mock.patch("merge_repo.gen_libs")
+    @mock.patch("git_class.gen_libs")
     def test_process_empty_list2(self, mock_lib):
 
         """Function:  test_process_empty_list2
