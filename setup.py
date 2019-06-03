@@ -34,7 +34,10 @@ setuptools.setup(
     platforms=["Linux"],
     long_description=LONG_DESCRIPTION,
 
-    py_modules=["git_class"],
+    py_modules=[
+        "git_class",
+        "__init__",
+        "version"],
 
     classifiers=[
         # Common Values:
