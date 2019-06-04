@@ -31,12 +31,39 @@
 
 
 # Installation:
+  There are two types of installs: pip and git.  Pip will only install the program modules and classes, whereas git will install all modules and classes including testing programs along with README.md and CHANGELOG.md files.  The Pip installation will be modifying another program's project to install these supporting librarues via pip.
 
-Install the project using git.
+### Pip Installation:
+  * Replace **{Other_Python_Project}** with the baseline path of another python program.
+
+Create requirements-git-lib.txt file in another program's project.
+
+```
+echo "git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib" >> {Other_Python_Project}/requirements-git-lib.txt
+echo "git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/python-lib.git#egg=python-lib" >> {Other_Python_Project}/requirements-python-lib.txt
+```
+
+Place the following commands into the another program's README.md file under the "Install supporting classes and libraries" section.
+   pip install -r requirements-git-lib.txt --target git_lib --trusted-host pypi.appdev.proj.coe.ic.gov
+   pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
+ 
+```
+vim {Other_Python_Project}/README.md
+```
+
+Add the general Git library requirements.txt to the another program's requirements.txt file and remove any duplicates.
+
+```
+cat requirements.txt >> {Other_Python_Project}/requirements.txt
+vim {Other_Python_Project}/requirements.txt
+```
+
+### Git Installation:
+
+Install general Git libraries and classes using git.
   * Replace **{Python_Project}** with the baseline path of the python program.
 
 ```
-umask 022
 cd {Python_Project}
 git clone git@sc.appdev.proj.coe.ic.gov:JAC-DSXD/git-lib.git
 ```
