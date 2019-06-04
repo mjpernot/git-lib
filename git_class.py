@@ -83,7 +83,6 @@ class GitClass(object):
         Description:  Create a git.Repo.git command line instance.
 
         Arguments:
-            None
 
         """
 
@@ -101,7 +100,6 @@ class GitMerge(GitClass):
     Super-Class:  GitClass
 
     Sub-Classes:
-        None
 
     Methods:
         __init__ -> Class instance initilization.
@@ -161,7 +159,6 @@ class GitMerge(GitClass):
         Description:  Creates git repo and git command line instances.
 
         Arguments:
-            None
 
         """
 
@@ -175,7 +172,6 @@ class GitMerge(GitClass):
         Description:  Sets the url to the origin to a remote git repository.
 
         Arguments:
-            None
 
         """
 
@@ -269,7 +265,6 @@ class GitMerge(GitClass):
             update appropriate attributes.
 
         Arguments:
-            None
 
         """
 
@@ -289,7 +284,6 @@ class GitMerge(GitClass):
             appropriate attribute.
 
         Arguments:
-            None
 
         """
 
