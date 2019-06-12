@@ -438,6 +438,7 @@ class GitMerge(GitClass):
             msg["status"] = code.status
             msg["stdout"] = code.stdout
             msg["command"] = code.command
+            msg["stderr"] = code.stderr
 
         return status, msg
 
