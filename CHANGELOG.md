@@ -6,7 +6,11 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 
 ## [0.1.2] - 2019-06-12
 ### Changed
-- priority_merge:  Captured standard error out in the exception handler.
+- GitClass.__init__:  Added attribute for git.Repo.init class.
+- GitMerge.priority_merge:  Captured standard error out in the exception handler.
+
+### Added
+- GitClass.create_init:  Create a git.Repo.init instance.
 
 
 ## [0.1.1] - 2019-06-04

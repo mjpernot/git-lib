@@ -42,6 +42,7 @@ class GitClass(object):
         __init__ -> Class instance initilization.
         create_repo -> Create a git.Repo instance.
         create_cmd -> Create a git.Repo.git command line instance.
+        create_init -> Create a git.Repo.init instance.
 
     """
 
@@ -58,6 +59,7 @@ class GitClass(object):
 
         self.gitrepo = None
         self.gitcmd = None
+        self.gitinit = None
         self.repo_dir = repo_dir
 
     def create_repo(self, repo_dir=None, **kwargs):
@@ -88,6 +90,22 @@ class GitClass(object):
 
         if self.gitrepo:
             self.gitcmd = self.gitrepo.git
+
+    def create_init(self, repo_dir=None, **kwargs):
+
+        """Method:  create_init
+
+        Description:  Create a git.Repo.init instance.
+
+        Arguments:
+            repo_dir -> Git repository path name.
+
+        """
+
+        if repo_dir:
+            self.repo_dir = repo_dir
+
+        self.gitinit = git.Repo.init(self.repo_dir)
 
 
 class GitMerge(GitClass):
