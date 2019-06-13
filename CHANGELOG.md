@@ -10,6 +10,7 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 - GitMerge.priority_merge:  Captured standard error out in the exception handler.
 
 ### Added
+- GitConfig:  Create a create a git.Repo.init class.
 - GitClass.create_init:  Create a git.Repo.init instance.
 
 
