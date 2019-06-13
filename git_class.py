@@ -580,6 +580,7 @@ class GitMerge(GitClass):
         except git.exc.GitCommandError:
             return False
 
+
 class GitConfig(GitClass):
 
     """Class:  GitConfig
