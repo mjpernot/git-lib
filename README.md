@@ -2,13 +2,12 @@
 # Classification (U)
 
 # Description:
-  This program is used to interact with local and remote Git repositories and have capbility to merge repositories.
+  This program is used to interact with local and remote Git repositories and have capbility to merge repositories.  It contains classes and libraries to interact with local and remote Git repositories.
 
 ###  This README file is broken down into the following sections:
   * Features
   * Prerequisites
   * Installation
-  * Program Description
   * Testing
     - Unit
 
@@ -82,10 +81,6 @@ Install supporting classes and libraries.
 ```
 pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
-
-
-# Program Descriptions:
-### Description: Contains classes and libraries to interact with local and remote Git repositories.
 
 
 # Testing:
