@@ -27,5 +27,6 @@ test/unit/git_class/gitmerge_get_dirty.py
 test/unit/git_class/gitmerge_get_untracked.py
 test/unit/git_class/gitclass_init.py
 test/unit/git_class/gitclass_create_repo.py
+test/unit/git_class/gitclass_create_init.py
 test/unit/git_class/gitclass_create_cmd.py
 
