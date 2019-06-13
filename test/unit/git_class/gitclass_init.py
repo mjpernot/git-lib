@@ -9,7 +9,6 @@
         test/unit/git_class/gitclass_init.py
 
     Arguments:
-        None
 
 """
 
@@ -33,7 +32,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -45,7 +43,7 @@ class UnitTest(unittest.TestCase):
 
     Super-Class:  unittest.TestCase
 
-    Sub-Classes:  None
+    Sub-Classes:
 
     Methods:
         setUp -> Unit testing initilization.
@@ -61,7 +59,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -74,14 +71,14 @@ class UnitTest(unittest.TestCase):
         Description:  Test with repo_dir being set.
 
         Arguments:
-            None
 
         """
 
         gitc = git_class.GitClass(self.repo_dir)
 
-        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir),
-                         (None, None, self.repo_dir))
+        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir,
+                          gitc.gitinit),
+                         (None, None, self.repo_dir, None))
 
     def test_init_default(self):
 
@@ -90,14 +87,14 @@ class UnitTest(unittest.TestCase):
         Description:  Test with default values set.
 
         Arguments:
-            None
 
         """
 
         gitc = git_class.GitClass()
 
-        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir),
-                         (None, None, "."))
+        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir,
+                          gitc.gitinit),
+                         (None, None, ".", None))
 
 
 if __name__ == "__main__":
