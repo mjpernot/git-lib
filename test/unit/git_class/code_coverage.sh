@@ -34,6 +34,7 @@ coverage run -a --source=git_class test/unit/git_class/gitclass_create_cmd.py
 coverage run -a --source=git_class test/unit/git_class/gitconfig_init.py
 coverage run -a --source=git_class test/unit/git_class/gitconfig_get_email.py
 coverage run -a --source=git_class test/unit/git_class/gitconfig_get_user.py
+coverage run -a --source=git_class test/unit/git_class/gitconfig_set_email.py
 
 echo ""
 echo "Producing code coverage report"

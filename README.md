@@ -134,6 +134,7 @@ test/unit/git_class/gitclass_create_cmd.py
 test/unit/git_class/gitconfig_init.py
 test/unit/git_class/gitconfig_get_email.py
 test/unit/git_class/gitconfig_get_user.py
+test/unit/git_class/gitconfig_set_email.py
 test/unit/git_class/gitmerge_init.py
 test/unit/git_class/gitmerge_set_remote.py
 test/unit/git_class/gitmerge_rename_br.py
