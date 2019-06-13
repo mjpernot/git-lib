@@ -95,7 +95,8 @@ class GitClass(object):
 
         """Method:  create_init
 
-        Description:  Create a git.Repo.init instance.
+        Description:  Create a git.Repo.init instance to an existing git
+            repository or creates a new git repository if one does not exist.
 
         Arguments:
             repo_dir -> Git repository path name.
@@ -603,9 +604,12 @@ class GitConfig(GitClass):
         """Method:  __init__
 
         Description:  Initialization of an instance of the GitConfig class.
+            Create a git.Repo.init instance to an existing git repository or
+            creates a new git repository if one does not exist.  Initializes
+            Config reader and writer instances.
 
         Arguments:
-            git_dir -> Directory path to the local git repo.
+            repo_dir -> Directory path to a local git repo.
 
         """
 
