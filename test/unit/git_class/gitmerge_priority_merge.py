@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_priority_merge.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -102,7 +100,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -122,7 +119,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with branch parameter passed.
 
         Arguments:
-            None
 
         """
 
@@ -139,7 +135,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception.
 
         Arguments:
-            None
 
         """
 
@@ -156,7 +151,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with successful branch call.
 
         Arguments:
-            None
 
         """
 

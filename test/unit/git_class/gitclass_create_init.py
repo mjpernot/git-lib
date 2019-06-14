@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # Classification (U)
 
-"""Program:  gitclass_create_repo.py
+"""Program:  gitclass_create_init.py
 
-    Description:  Unit testing of GitClass.create_repo in git_class.py.
+    Description:  Unit testing of GitClass.create_init in git_class.py.
 
     Usage:
-        test/unit/git_class/gitclass_create_repo.py
+        test/unit/git_class/gitclass_create_init.py
 
     Arguments:
 
@@ -76,13 +76,14 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        mock_git.Repo.return_value = "Git Class Instance"
+        mock_git.Repo.init.return_value = "Git Init Class Instance"
 
-        self.gitc.create_repo(self.repo_dir)
+        self.gitc.create_init(self.repo_dir)
 
         self.assertEqual((self.gitc.gitrepo, self.gitc.gitcmd,
-                          self.gitc.repo_dir),
-                         ("Git Class Instance", None, self.repo_dir))
+                          self.gitc.repo_dir, self.gitc.gitinit),
+                         (None, None, self.repo_dir,
+                          "Git Init Class Instance"))
 
     @mock.patch("git_class.git")
     def test_default_arg(self, mock_git):
@@ -95,13 +96,13 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        mock_git.Repo.return_value = "Git Class Instance"
+        mock_git.Repo.init.return_value = "Git Init Class Instance"
 
-        self.gitc.create_repo()
+        self.gitc.create_init()
 
         self.assertEqual((self.gitc.gitrepo, self.gitc.gitcmd,
-                          self.gitc.repo_dir),
-                         ("Git Class Instance", None, "."))
+                          self.gitc.repo_dir, self.gitc.gitinit),
+                         (None, None, ".", "Git Init Class Instance"))
 
 
 if __name__ == "__main__":

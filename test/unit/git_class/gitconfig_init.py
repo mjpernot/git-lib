@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # Classification (U)
 
-"""Program:  gitclass_init.py
+"""Program:  gitconfig_init.py
 
-    Description:  Unit testing of GitClass.__init__ in git_class.py.
+    Description:  Unit testing of gitconfig.__init__ in git_class.py.
 
     Usage:
-        test/unit/git_class/gitclass_init.py
+        test/unit/git_class/gitconfig_init.py
 
     Arguments:
 
@@ -17,6 +17,7 @@
 # Standard
 import sys
 import os
+import shutil
 
 if sys.version_info < (2, 7):
     import unittest2 as unittest
@@ -47,8 +48,8 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
-        test_repo_dir_set -> Test with repo_dir being set.
         test_init_default -> Test with default values set.
+        tearDown -> Clean up of unit testing.
 
     """
 
@@ -62,23 +63,7 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        self.repo_dir = "/repo/directory"
-
-    def test_repo_dir_set(self):
-
-        """Function:  test_repo_dir_set
-
-        Description:  Test with repo_dir being set.
-
-        Arguments:
-
-        """
-
-        gitc = git_class.GitClass(self.repo_dir)
-
-        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir,
-                          gitc.gitinit),
-                         (None, None, self.repo_dir, None))
+        self.repo_dir = "test/unit/git_class/test/test-repo"
 
     def test_init_default(self):
 
@@ -90,11 +75,22 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        gitc = git_class.GitClass()
+        gitr = git_class.GitConfig(self.repo_dir)
 
-        self.assertEqual((gitc.gitrepo, gitc.gitcmd, gitc.repo_dir,
-                          gitc.gitinit),
-                         (None, None, ".", None))
+        self.assertEqual(gitr.repo_dir, self.repo_dir)
+
+    def tearDown(self):
+
+        """Function:  tearDown
+
+        Description:  Clean up of unit testing.
+
+        Arguments:
+
+        """
+
+        if os.path.isdir(self.repo_dir):
+            shutil.rmtree(self.repo_dir)
 
 
 if __name__ == "__main__":
