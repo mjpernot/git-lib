@@ -42,6 +42,7 @@ class GitClass(object):
         __init__ -> Class instance initilization.
         create_repo -> Create a git.Repo instance.
         create_cmd -> Create a git.Repo.git command line instance.
+        create_init -> Create a git.Repo.init instance.
 
     """
 
@@ -58,6 +59,7 @@ class GitClass(object):
 
         self.gitrepo = None
         self.gitcmd = None
+        self.gitinit = None
         self.repo_dir = repo_dir
 
     def create_repo(self, repo_dir=None, **kwargs):
@@ -88,6 +90,23 @@ class GitClass(object):
 
         if self.gitrepo:
             self.gitcmd = self.gitrepo.git
+
+    def create_init(self, repo_dir=None, **kwargs):
+
+        """Method:  create_init
+
+        Description:  Create a git.Repo.init instance to an existing git
+            repository or creates a new git repository if one does not exist.
+
+        Arguments:
+            repo_dir -> Git repository path name.
+
+        """
+
+        if repo_dir:
+            self.repo_dir = repo_dir
+
+        self.gitinit = git.Repo.init(self.repo_dir)
 
 
 class GitMerge(GitClass):
@@ -438,6 +457,7 @@ class GitMerge(GitClass):
             msg["status"] = code.status
             msg["stdout"] = code.stdout
             msg["command"] = code.command
+            msg["stderr"] = code.stderr
 
         return status, msg
 
@@ -559,3 +579,95 @@ class GitMerge(GitClass):
 
         except git.exc.GitCommandError:
             return False
+
+
+class GitConfig(GitClass):
+
+    """Class:  GitConfig
+
+    Description:  Class that handles configuration of the local git repository.
+
+    Super-Class:  GitClass
+
+    Sub-Classes:
+
+    Methods:
+        __init__ -> Class instance initilization.
+        get_email -> Return the email address bound to the git repository.
+        get_user -> Return the user name bound to the git repository.
+        set_email -> Set the email address for the local git repository.
+        set_user -> Set the user name for the local git repository.
+
+    """
+
+    def __init__(self, repo_dir, **kwargs):
+
+        """Method:  __init__
+
+        Description:  Initialization of an instance of the GitConfig class.
+            Create a git.Repo.init instance to an existing git repository or
+            creates a new git repository if one does not exist.  Initializes
+            Config reader and writer instances.
+
+        Arguments:
+            repo_dir -> Directory path to a local git repo.
+
+        """
+
+        super(GitConfig, self).__init__(repo_dir)
+
+        self.gitinit = git.Repo.init(self.repo_dir)
+        self.reader = self.gitinit.config_reader()
+        self.writer = self.gitinit.config_writer()
+
+    def get_email(self, **kwargs):
+
+        """Function:  get_email
+
+        Description:  Return the email address bound to the git repository.
+
+        Arguments:
+            (output) Email address.
+
+        """
+
+        return self.reader.get_value("user", "email")
+
+    def get_user(self, **kwargs):
+
+        """Function:  get_user
+
+        Description:  Return the user name bound to the git repository.
+
+        Arguments:
+            (output) User name.
+
+        """
+
+        return self.reader.get_value("user", "name")
+
+    def set_email(self, email, **kwargs):
+
+        """Function:  set_email
+
+        Description:  Set the email address for the local git repository.
+
+        Arguments:
+            (input) email -> Email address to be bound to local git repo.
+
+        """
+
+        return self.writer.set_value("user", "email", email).release()
+
+    def set_user(self, name, **kwargs):
+
+        """Function:  set_user
+
+        Description:  Set the user name for the local git repository.
+
+        Arguments:
+            (input) name -> User name to be bound to local git repo.
+
+        """
+
+        return self.writer.set_value("user", "name", name).release()
