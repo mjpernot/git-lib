@@ -123,6 +123,7 @@ class GitMerge(GitClass):
         get_untracked -> Find any untracked (i.e. new) files.
         is_dirty -> Check to see if there is any dirty objects.
         is_untracked -> Check to see if there is any new objects not tracked.
+        git_fetch -> Fetch from the remote Git repository the master branch.
         rename_br -> Rename the current branch to a new name.
         git_co -> Git checkout to another branch.
         priority_merge -> Merge of branch with priority of existing branch.
