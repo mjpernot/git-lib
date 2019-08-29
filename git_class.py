@@ -7,6 +7,7 @@
     Classes:
         GitClass
             GitMerge
+            GitConfig
 
 """
 
@@ -32,11 +33,6 @@ class GitClass(object):
 
     Description:  Class that initializes and sets up instances to the Python
         git repository and git command line instances.
-
-    Super-Class:  object
-
-    Sub-Classes:
-        GitMerge
 
     Methods:
         __init__ -> Class instance initilization.
@@ -115,10 +111,6 @@ class GitMerge(GitClass):
 
     Description:  Class that handles operations of merging a git repository
         with a remote git repository.
-
-    Super-Class:  GitClass
-
-    Sub-Classes:
 
     Methods:
         __init__ -> Class instance initilization.
@@ -586,10 +578,6 @@ class GitConfig(GitClass):
     """Class:  GitConfig
 
     Description:  Class that handles configuration of the local git repository.
-
-    Super-Class:  GitClass
-
-    Sub-Classes:
 
     Methods:
         __init__ -> Class instance initilization.
