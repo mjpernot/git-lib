@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_is_dirty.py
 
     Arguments:
-        None
 
 """
 
@@ -34,7 +33,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -45,7 +43,6 @@ def is_dirty2():
     Description:  Method stub holder for git.Repo.git.is_dirty().
 
     Arguments:
-        None
 
     """
 
@@ -59,7 +56,6 @@ def is_dirty():
     Description:  Method stub holder for git.Repo.git.is_dirty().
 
     Arguments:
-        None
 
     """
 
@@ -71,10 +67,6 @@ class UnitTest(unittest.TestCase):
     """Class:  UnitTest
 
     Description:  Class which is a representation of a unit testing.
-
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
 
     Methods:
         setUp -> Unit testing initilization.
@@ -90,7 +82,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -110,7 +101,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with is_dirty returns False.
 
         Arguments:
-            None
 
         """
 
@@ -126,7 +116,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with is_dirty returns True.
 
         Arguments:
-            None
 
         """
 
