@@ -55,7 +55,6 @@ class Index(object):
         Description:  Initialization of class instance.
 
         Arguments:
-            None
 
         """
 
@@ -82,7 +81,6 @@ class Diff(Index):
         Description:  Initialization of class instance.
 
         Arguments:
-            None
 
         """
 
@@ -123,6 +121,7 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
+        test_process_remove_dir -> 
         test_process_add_option -> Test with add option passed.
         test_process_remove_option -> Test with remove option passed.
         test_process_newfiles_list -> Test with new_files list set.
@@ -153,40 +152,20 @@ class UnitTest(unittest.TestCase):
         self.new_list1 = []
         self.new_list2 = ["file1"]
 
-    @mock.patch("git_class.gen_libs")
-    def test_process_add_option(self, mock_lib):
+    @mock.patch("git_class.os")
+    @mock.patch("git_class.shutil")
+    def test_process_remove_dir(self, mock_shutil, mock_os):
 
-        """Function:  test_process_add_option
+        """Function:  test_process_remove_dir
 
-        Description:  Test with add option passed.
-
-        Arguments:
-
-        """
-
-        mock_lib.rm_file.return_value = True
-
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
-        DIFF = Diff()
-        self.gitr.gitrepo = GIT(DIFF, self.new_list1)
-        self.gitr.new_files = self.new_list2
-
-        self.gitr.process_untracked("add")
-
-        self.assertEqual(self.gitr.new_files, self.new_list2)
-
-    @mock.patch("git_class.gen_libs")
-    def test_process_remove_option(self, mock_lib):
-
-        """Function:  test_process_remove_option
-
-        Description:  Test with remove option passed.
+        Description:  Test with removal of directory.
 
         Arguments:
 
         """
 
-        mock_lib.rm_file.return_value = True
+        mock_shutil.rmtree.return_value = True
+        mock_os.path.isdir.return_value = True
 
         GIT = collections.namedtuple('GIT', 'index untracked_files')
         DIFF = Diff()
@@ -197,8 +176,57 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual(self.gitr.new_files, self.new_list2)
 
+    @mock.patch("git_class.os")
     @mock.patch("git_class.gen_libs")
-    def test_process_newfiles_list(self, mock_lib):
+    def test_process_add_option(self, mock_lib, mock_os):
+
+        """Function:  test_process_add_option
+
+        Description:  Test with add option passed.
+
+        Arguments:
+
+        """
+
+        mock_lib.rm_file.return_value = True
+        mock_os.path.isdir.return_value = False
+
+        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        DIFF = Diff()
+        self.gitr.gitrepo = GIT(DIFF, self.new_list1)
+        self.gitr.new_files = self.new_list2
+
+        self.gitr.process_untracked("add")
+
+        self.assertEqual(self.gitr.new_files, self.new_list2)
+
+    @mock.patch("git_class.os")
+    @mock.patch("git_class.gen_libs")
+    def test_process_remove_option(self, mock_lib, mock_os):
+
+        """Function:  test_process_remove_option
+
+        Description:  Test with remove option passed.
+
+        Arguments:
+
+        """
+
+        mock_lib.rm_file.return_value = True
+        mock_os.path.isdir.return_value = False
+
+        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        DIFF = Diff()
+        self.gitr.gitrepo = GIT(DIFF, self.new_list1)
+        self.gitr.new_files = self.new_list2
+
+        self.gitr.process_untracked("remove")
+
+        self.assertEqual(self.gitr.new_files, self.new_list2)
+
+    @mock.patch("git_class.os")
+    @mock.patch("git_class.gen_libs")
+    def test_process_newfiles_list(self, mock_lib, mock_os):
 
         """Function:  test_process_newfiles_list
 
@@ -209,6 +237,7 @@ class UnitTest(unittest.TestCase):
         """
 
         mock_lib.rm_file.return_value = True
+        mock_os.path.isdir.return_value = False
 
         GIT = collections.namedtuple('GIT', 'index untracked_files')
         DIFF = Diff()
@@ -219,8 +248,9 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual(self.gitr.new_files, self.new_list2)
 
+    @mock.patch("git_class.os")
     @mock.patch("git_class.gen_libs")
-    def test_process_empty_list2(self, mock_lib):
+    def test_process_empty_list2(self, mock_lib, mock_os):
 
         """Function:  test_process_empty_list2
 
@@ -231,6 +261,7 @@ class UnitTest(unittest.TestCase):
         """
 
         mock_lib.rm_file.return_value = True
+        mock_os.path.isdir.return_value = False
 
         GIT = collections.namedtuple('GIT', 'index untracked_files')
         DIFF = Diff()
