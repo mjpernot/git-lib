@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_commits_diff.py
 
     Arguments:
-        None
 
 """
 
