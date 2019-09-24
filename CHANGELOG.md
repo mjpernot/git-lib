@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [0.2.0] - 2019-09-24
+### Fixed
+- GitMerge.process_untracked:  Allow for the removal of untracked directories.
+
+
 ## [0.1.2] - 2019-06-12
 ### Changed
-- GitClass.__init__:  Added attribute for git.Repo.init class.
+- GitClass.\_\_init\_\_:  Added attribute for git.Repo.init class.
 - GitMerge.priority_merge:  Captured standard error out in the exception handler.
 
 ### Added
@@ -16,7 +21,7 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 
 ## [0.1.1] - 2019-06-04
 ### Added
-- __init__.py:  Added file for class use.
+- \_\_init\_\_.py:  Added file for class use.
 
 ### Changed
 - setup.py:  Added py_modules section.

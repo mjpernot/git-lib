@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_get_dirty.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -57,7 +55,6 @@ class Index(object):
         Description:  Initialization of class instance.
 
         Arguments:
-            None
 
         """
 
@@ -72,6 +69,7 @@ class Diff(Index):
 
     Methods:
         __init -> Class initilization.
+        diff -> Method stub holder for git.gitrepo.index.diff().
 
     """
 
@@ -128,10 +126,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_all_lists -> Test with all attributes have a list.
@@ -148,7 +142,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -174,7 +167,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all attributes have a list.
 
         Arguments:
-            None
 
         """
 
@@ -194,7 +186,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with chg_files has a list.
 
         Arguments:
-            None
 
         """
 
@@ -214,7 +205,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with rm_files has a list.
 
         Arguments:
-            None
 
         """
 
@@ -234,7 +224,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all attributes are empty lists.
 
         Arguments:
-            None
 
         """
 

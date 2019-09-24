@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_git_fetch.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -46,7 +44,6 @@ def fetch3():
     Description:  Method stub holder for git.Repo.git.fetch().
 
     Arguments:
-        None
 
     """
 
@@ -60,7 +57,6 @@ def fetch2():
     Description:  Method stub holder for git.Repo.git.fetch().
 
     Arguments:
-        None
 
     """
 
@@ -74,7 +70,6 @@ def fetch():
     Description:  Method stub holder for git.Repo.git.fetch().
 
     Arguments:
-        None
 
     """
 
@@ -86,10 +81,6 @@ class UnitTest(unittest.TestCase):
     """Class:  UnitTest
 
     Description:  Class which is a representation of a unit testing.
-
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
 
     Methods:
         setUp -> Unit testing initilization.
@@ -106,7 +97,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -126,7 +116,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception - 2 status.
 
         Arguments:
-            None
 
         """
 
@@ -143,7 +132,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception - 128 status.
 
         Arguments:
-            None
 
         """
 
@@ -160,7 +148,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with successful git_fetch call.
 
         Arguments:
-            None
 
         """
 

@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_set_remote.py
 
     Arguments:
-        None
 
 """
 
@@ -34,7 +33,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -60,10 +58,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_set_remote -> Test with default values settings.
@@ -77,7 +71,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -97,7 +90,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with default values settings.
 
         Arguments:
-            None
 
         """
 

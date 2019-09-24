@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_is_remote_branch.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -75,10 +73,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_is_remote_branch_false -> Test with exception from rev_parse call.
@@ -93,7 +87,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -113,7 +106,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with exception raised from ls_remote call.
 
         Arguments:
-            None
 
         """
 
@@ -129,7 +121,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with successful ls_remote call.
 
         Arguments:
-            None
 
         """
 

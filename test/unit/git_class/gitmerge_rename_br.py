@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_rename_br.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -73,10 +71,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_rename_br_branch -> Test with branch parameter passed.
@@ -92,7 +86,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -112,7 +105,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with branch parameter passed.
 
         Arguments:
-            None
 
         """
 
@@ -129,7 +121,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception.
 
         Arguments:
-            None
 
         """
 
@@ -146,7 +137,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with successful branch call.
 
         Arguments:
-            None
 
         """
 

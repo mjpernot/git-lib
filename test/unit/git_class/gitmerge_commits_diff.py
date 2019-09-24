@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_commits_diff.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -47,6 +45,7 @@ class Commits(object):
 
     Methods:
         __init -> Class initilization.
+        iter_commits -> Method stub holder for git.gitrepo.iter_commits().
 
     """
 
@@ -97,10 +96,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_commitsdiff_zero -> Test with zero commits difference.
@@ -116,7 +111,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -136,7 +130,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with zero commits difference.
 
         Arguments:
-            None
 
         """
 
@@ -153,7 +146,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with one commit difference.
 
         Arguments:
-            None
 
         """
 
@@ -170,7 +162,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with two commits difference.
 
         Arguments:
-            None
 
         """
 

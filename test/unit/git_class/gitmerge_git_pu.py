@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_git_pu.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -87,10 +85,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_git_pu_tags -> Test with passing tags option.
@@ -107,7 +101,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -127,7 +120,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with passing tags option.
 
         Arguments:
-            None
 
         """
 
@@ -144,7 +136,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception - 2 status.
 
         Arguments:
-            None
 
         """
 
@@ -161,7 +152,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with raised exception - 128 status.
 
         Arguments:
-            None
 
         """
 
@@ -178,7 +168,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with successful git_pu call.
 
         Arguments:
-            None
 
         """
 

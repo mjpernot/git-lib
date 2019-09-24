@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_process_dirty.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -57,7 +55,6 @@ class Index(object):
         Description:  Initialization of class instance.
 
         Arguments:
-            None
 
         """
 
@@ -72,6 +69,11 @@ class Diff(Index):
 
     Methods:
         __init -> Class initilization.
+        diff -> Method stub holder for git.gitrepo.index.diff().
+        remove -> Method stub holder for git.gitrepo.index.remove().
+        add -> Method stub holder for git.gitrepo.index.add().
+        checkout -> Method stub holder for git.gitrepo.index.checkout().
+        commit -> Method stub holder for git.gitrepo.index.commit().
 
     """
 
@@ -182,10 +184,6 @@ class UnitTest(unittest.TestCase):
 
     Description:  Class which is a representation of a unit testing.
 
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
-
     Methods:
         setUp -> Unit testing initilization.
         test_process_all_true_revert -> Test all if statements True w/ revert.
@@ -210,7 +208,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -236,7 +233,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all if statements are True with revert.
 
         Arguments:
-            None
 
         """
 
@@ -256,7 +252,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all if statements are True with commit.
 
         Arguments:
-            None
 
         """
 
@@ -276,7 +271,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all if statements are True.
 
         Arguments:
-            None
 
         """
 
@@ -296,7 +290,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with all if statements are True.
 
         Arguments:
-            None
 
         """
 
@@ -316,7 +309,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with chg_files passed with revert option.
 
         Arguments:
-            None
 
         """
 
@@ -335,7 +327,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with chg_files passed with commit option.
 
         Arguments:
-            None
 
         """
 
@@ -354,7 +345,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with chg_files passed as empty list.
 
         Arguments:
-            None
 
         """
 
@@ -373,7 +363,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with chg_files passed as empty list.
 
         Arguments:
-            None
 
         """
 
@@ -392,7 +381,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with rm_files passed with commit option.
 
         Arguments:
-            None
 
         """
 
@@ -411,7 +399,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with rm_files passed with revert option.
 
         Arguments:
-            None
 
         """
 
@@ -430,7 +417,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with rm_files passed as empty list.
 
         Arguments:
-            None
 
         """
 
@@ -449,7 +435,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with rm_files passed as empty list.
 
         Arguments:
-            None
 
         """
 
