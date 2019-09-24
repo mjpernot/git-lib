@@ -9,7 +9,6 @@
         test/unit/git_class/gitclass_create_cmd.py
 
     Arguments:
-        None
 
 """
 
@@ -34,7 +33,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -43,10 +41,6 @@ class UnitTest(unittest.TestCase):
     """Class:  UnitTest
 
     Description:  Class which is a representation of a unit testing.
-
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
 
     Methods:
         setUp -> Unit testing initilization.
@@ -62,7 +56,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -75,7 +68,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with repo_dir attribute not set.
 
         Arguments:
-            None
 
         """
 
@@ -90,7 +82,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with repo_dir attribute set.
 
         Arguments:
-            None
 
         """
 

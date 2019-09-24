@@ -9,7 +9,6 @@
         test/unit/git_class/gitmerge_is_commits_behind.py
 
     Arguments:
-        None
 
 """
 
@@ -35,7 +34,6 @@ import git_class
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -44,10 +42,6 @@ class UnitTest(unittest.TestCase):
     """Class:  UnitTest
 
     Description:  Class which is a representation of a unit testing.
-
-    Super-Class:  unittest.TestCase
-
-    Sub-Classes:  None
 
     Methods:
         setUp -> Unit testing initilization.
@@ -64,7 +58,6 @@ class UnitTest(unittest.TestCase):
         Description:  Initialization for unit testing.
 
         Arguments:
-            None
 
         """
 
@@ -85,7 +78,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with zero commits difference.
 
         Arguments:
-            None
 
         """
 
@@ -101,7 +93,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with one commit difference.
 
         Arguments:
-            None
 
         """
 
@@ -117,7 +108,6 @@ class UnitTest(unittest.TestCase):
         Description:  Test with two commits difference.
 
         Arguments:
-            None
 
         """
 

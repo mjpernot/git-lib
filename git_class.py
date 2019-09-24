@@ -7,6 +7,7 @@
     Classes:
         GitClass
             GitMerge
+            GitConfig
 
 """
 
@@ -15,6 +16,7 @@
 # Standard
 import os
 import time
+import shutil
 
 # Third-party
 import git
@@ -28,15 +30,10 @@ __version__ = version.__version__
 
 class GitClass(object):
 
-    """Class:  GitMerge
+    """Class:  GitClass
 
     Description:  Class that initializes and sets up instances to the Python
         git repository and git command line instances.
-
-    Super-Class:  object
-
-    Sub-Classes:
-        GitMerge
 
     Methods:
         __init__ -> Class instance initilization.
@@ -50,7 +47,7 @@ class GitClass(object):
 
         """Method:  __init__
 
-        Description:  Initialization of an instance of the GitMerge class.
+        Description:  Initialization of an instance of the GitClass class.
 
         Arguments:
             repo_dir -> Git repository path name.
@@ -116,10 +113,6 @@ class GitMerge(GitClass):
     Description:  Class that handles operations of merging a git repository
         with a remote git repository.
 
-    Super-Class:  GitClass
-
-    Sub-Classes:
-
     Methods:
         __init__ -> Class instance initilization.
         create_gitrepo -> Creates git repo and git command line instances.
@@ -131,6 +124,7 @@ class GitMerge(GitClass):
         get_untracked -> Find any untracked (i.e. new) files.
         is_dirty -> Check to see if there is any dirty objects.
         is_untracked -> Check to see if there is any new objects not tracked.
+        git_fetch -> Fetch from the remote Git repository the master branch.
         rename_br -> Rename the current branch to a new name.
         git_co -> Git checkout to another branch.
         priority_merge -> Merge of branch with priority of existing branch.
@@ -274,7 +268,12 @@ class GitMerge(GitClass):
 
             elif option == "remove":
                 for f_name in self.new_files:
-                    gen_libs.rm_file(os.path.join(self.git_dir, f_name))
+
+                    if os.path.isdir(os.path.join(self.git_dir, f_name)):
+                        shutil.rmtree(os.path.join(self.git_dir, f_name))
+
+                    else:
+                        gen_libs.rm_file(os.path.join(self.git_dir, f_name))
 
     def get_dirty(self, **kwargs):
 
@@ -586,10 +585,6 @@ class GitConfig(GitClass):
     """Class:  GitConfig
 
     Description:  Class that handles configuration of the local git repository.
-
-    Super-Class:  GitClass
-
-    Sub-Classes:
 
     Methods:
         __init__ -> Class instance initilization.
