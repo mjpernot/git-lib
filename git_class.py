@@ -16,6 +16,7 @@
 # Standard
 import os
 import time
+import shutil
 
 # Third-party
 import git
@@ -267,7 +268,12 @@ class GitMerge(GitClass):
 
             elif option == "remove":
                 for f_name in self.new_files:
-                    gen_libs.rm_file(os.path.join(self.git_dir, f_name))
+
+                    if os.path.isdir(os.path.join(self.git_dir, f_name)):
+                        shutil.rmtree(os.path.join(self.git_dir, f_name))
+
+                    else:
+                        gen_libs.rm_file(os.path.join(self.git_dir, f_name))
 
     def get_dirty(self, **kwargs):
 
