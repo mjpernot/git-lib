@@ -29,7 +29,7 @@ __version__ = version.__version__
 
 class GitClass(object):
 
-    """Class:  GitMerge
+    """Class:  GitClass
 
     Description:  Class that initializes and sets up instances to the Python
         git repository and git command line instances.
@@ -46,7 +46,7 @@ class GitClass(object):
 
         """Method:  __init__
 
-        Description:  Initialization of an instance of the GitMerge class.
+        Description:  Initialization of an instance of the GitClass class.
 
         Arguments:
             repo_dir -> Git repository path name.
