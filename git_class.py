@@ -580,7 +580,7 @@ class GitMerge(GitClass):
         except git.exc.GitCommandError:
             return False
 
-    def detach_head(self, gitc, **kwargs):
+    def detach_head(self, **kwargs):
 
         """Function:  detach_head
 
@@ -592,6 +592,7 @@ class GitMerge(GitClass):
         """
 
         self.gitcmd.checkout(str(self.active_branch.commit.hexsha))
+
 
 
 class GitConfig(GitClass):
