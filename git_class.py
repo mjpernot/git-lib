@@ -133,6 +133,7 @@ class GitMerge(GitClass):
         is_commits_ahead -> Gets diff - local branch is ahead of remote branch.
         is_commits_behind -> Gets diff - local branch is behind remote branch.
         is_remote_branch -> Determines if the branch exists in remote git repo.
+        detach_head -> Checkouts the head to the latest commit ID.
 
     """
 
@@ -578,6 +579,19 @@ class GitMerge(GitClass):
 
         except git.exc.GitCommandError:
             return False
+
+    def detach_head(self, gitc, **kwargs):
+
+        """Function:  detach_head
+
+        Description:  Checkouts the head to the latest commit ID.  This is to
+            allow the head to become deatched.
+
+        Arguments:
+
+        """
+
+        self.gitcmd.checkout(str(self.active_branch.commit.hexsha))
 
 
 class GitConfig(GitClass):
