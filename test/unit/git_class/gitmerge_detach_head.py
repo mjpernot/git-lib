@@ -38,7 +38,7 @@ __version__ = version.__version__
 
 class ActiveBranch(object):
 
-    """Class:  Index
+    """Class:  ActiveBranch
 
     Description:  Class stub holder for git.gitrepo.active_branch.
 
@@ -62,7 +62,7 @@ class ActiveBranch(object):
 
 class Commit(object):
 
-    """Class:  Diff
+    """Class:  Commit
 
     Description:  Class stub holder for git.gitrepo.active_branch.commit.
 
@@ -86,7 +86,7 @@ class Commit(object):
 
 class Hexsha(object):
 
-    """Class:  Diff
+    """Class:  Hexsha
 
     Description:  Class stub holder - git.gitrepo.active_branch.commit.hexsha.
 
@@ -110,7 +110,7 @@ class Hexsha(object):
 
 class Checkout(object):
 
-    """Class:  Diff
+    """Class:  Checkout
 
     Description:  Class stub holder for git.gitrepo.Git.checkout.
 
