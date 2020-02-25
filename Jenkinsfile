@@ -17,6 +17,7 @@ pipeline {
                 pip2 install gitdb2==2.0.4 --user
                 ./test/unit/git_class/gitmerge_init.py
                 ./test/unit/git_class/gitmerge_detach_head.py
+                ./test/unit/git_class/gitmerge_get_br_name.py
                 ./test/unit/git_class/gitmerge_create_gitrepo.py
                 ./test/unit/git_class/gitmerge_set_remote.py
                 ./test/unit/git_class/gitmerge_is_remote.py
