@@ -134,6 +134,7 @@ class GitMerge(GitClass):
         is_commits_behind -> Gets diff - local branch is behind remote branch.
         is_remote_branch -> Determines if the branch exists in remote git repo.
         detach_head -> Checkouts the head to the latest commit ID.
+        get_br_name -> Return the current branch name.
 
     """
 
@@ -592,6 +593,19 @@ class GitMerge(GitClass):
         """
 
         self.gitcmd.checkout(str(self.gitrepo.active_branch.commit.hexsha))
+
+    def get_br_name(self, **kwargs):
+
+        """Function:  get_br_name
+
+        Description:  Return the current branch name.
+
+        Arguments:
+            (output) Current branch name.
+
+        """
+
+        return self.gitrepo.active_branch.name
 
 
 class GitConfig(GitClass):
