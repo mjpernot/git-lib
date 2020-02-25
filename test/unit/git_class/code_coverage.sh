@@ -9,6 +9,7 @@ coverage erase
 echo ""
 echo "Running unit test modules in conjunction with coverage"
 coverage run -a --source=git_class test/unit/git_class/gitmerge_init.py
+coverage run -a --source=git_class test/unit/git_class/gitmerge_detach_head.py
 coverage run -a --source=git_class test/unit/git_class/gitmerge_create_gitrepo.py
 coverage run -a --source=git_class test/unit/git_class/gitmerge_set_remote.py
 coverage run -a --source=git_class test/unit/git_class/gitmerge_is_remote.py
