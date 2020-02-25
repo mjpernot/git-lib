@@ -613,7 +613,6 @@ class GitMerge(GitClass):
         """Function:  remove_branch
 
         Description:  Remove branch name passed to method.
-            NOTE:  Can not remove branch if it is the current branch name.
 
         Arguments:
             (input) branch -> Branch name.
