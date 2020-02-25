@@ -135,6 +135,7 @@ class GitMerge(GitClass):
         is_remote_branch -> Determines if the branch exists in remote git repo.
         detach_head -> Checkouts the head to the latest commit ID.
         get_br_name -> Return the current branch name.
+        remove_branch -> Remove branch name passed to method.
 
     """
 
@@ -606,6 +607,32 @@ class GitMerge(GitClass):
         """
 
         return self.gitrepo.active_branch.name
+
+    def remove_branch(self, branch, **kwargs):
+
+        """Function:  remove_branch
+
+        Description:  Remove branch name passed to method.
+            NOTE:  Can not remove branch if it is the current branch name.
+
+        Arguments:
+            (input) branch -> Branch name.
+            (output) status -> True|False - Status of remove command.
+            (output) msg -> Error messages, if any.
+
+        """
+
+        status = True
+        msg = None
+
+        if branch == self.get_br_name():
+            status = False
+            msg = "WARNING: Cannot remove branch if current branch."
+
+        else:
+            self.gitrepo.delete_head(branch)
+
+        return status, msg
 
 
 class GitConfig(GitClass):
