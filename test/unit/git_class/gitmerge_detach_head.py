@@ -40,7 +40,7 @@ class ActiveBranch(object):
 
     """Class:  Index
 
-    Description:  Class stub holder for git.gitrepo.index.
+    Description:  Class stub holder for git.gitrepo.active_branch.
 
     Methods:
         __init -> Class initilization.
@@ -64,7 +64,7 @@ class Commit(object):
 
     """Class:  Diff
 
-    Description:  Class stub holder for git.gitrepo.index.diff.
+    Description:  Class stub holder for git.gitrepo.active_branch.commit.
 
     Methods:
         __init -> Class initilization.
@@ -88,7 +88,7 @@ class Hexsha(object):
 
     """Class:  Diff
 
-    Description:  Class stub holder for git.gitrepo.index.diff.
+    Description:  Class stub holder - git.gitrepo.active_branch.commit.hexsha.
 
     Methods:
         __init -> Class initilization.
@@ -112,10 +112,11 @@ class Checkout(object):
 
     """Class:  Diff
 
-    Description:  Class stub holder for git.gitrepo.index.diff.
+    Description:  Class stub holder for git.gitrepo.Git.checkout.
 
     Methods:
         __init -> Class initilization.
+        checkout -> Method stub holder for git.gitrepo.Git.checkout().
 
     """
 
@@ -131,12 +132,11 @@ class Checkout(object):
 
         pass
 
-
     def checkout(self, branch):
 
         """Function:  checkout
 
-        Description:  Method stub holder for git.Repo.git.checkout().
+        Description:  Method stub holder for git.gitrepo.Git.checkout().
 
         Arguments:
             branch -> Stub holder for branch name or hexi-Commit ID.
