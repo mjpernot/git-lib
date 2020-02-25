@@ -92,7 +92,7 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
-        test_detach_head -> Test with default values settings.
+        test_get_br_name -> Test with default values settings.
 
     """
 
