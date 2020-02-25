@@ -6,6 +6,7 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 
 ## [0.3.0] - 2020-02-24
 ### Added
+- GitMerge.remove_branch:  Added method to remove branch name passed to method.
 - GitMerge.get_br_name:  Added method to return the current branch name.
 - GitMerge.detach_head:  Added method to checkout the head to the latest Commit ID.
 
