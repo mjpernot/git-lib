@@ -591,8 +591,7 @@ class GitMerge(GitClass):
 
         """
 
-        self.gitcmd.checkout(str(self.active_branch.commit.hexsha))
-
+        self.gitcmd.checkout(str(self.gitrepo.active_branch.commit.hexsha))
 
 
 class GitConfig(GitClass):
