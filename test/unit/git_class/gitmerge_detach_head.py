@@ -57,12 +57,12 @@ class ActiveBranch(object):
 
         """
 
-        self.active_branch = Commit()
+        self.active_branch = Commit1()
 
 
-class Commit(object):
+class Commit1(object):
 
-    """Class:  Commit
+    """Class:  Commit1
 
     Description:  Class stub holder for git.gitrepo.active_branch.commit.
 
@@ -81,12 +81,12 @@ class Commit(object):
 
         """
 
-        self.commit = Hexsha()
+        self.commit = Hexsha1()
 
 
-class Hexsha(object):
+class Hexsha1(object):
 
-    """Class:  Hexsha
+    """Class:  Hexsha1
 
     Description:  Class stub holder - git.gitrepo.active_branch.commit.hexsha.
 
@@ -108,9 +108,9 @@ class Hexsha(object):
         self.hexsha = "1234567890abcdef"
 
 
-class Checkout(object):
+class Checkout1(object):
 
-    """Class:  Checkout
+    """Class:  Checkout1
 
     Description:  Class stub holder for git.gitrepo.Git.checkout.
 
@@ -188,7 +188,7 @@ class UnitTest(unittest.TestCase):
         """
 
         self.gitr.gitrepo = ActiveBranch()
-        self.gitr.gitcmd = Checkout()
+        self.gitr.gitcmd = Checkout1()
         self.assertFalse(self.gitr.detach_head())
 
 
