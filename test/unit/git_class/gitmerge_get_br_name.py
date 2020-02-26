@@ -57,10 +57,10 @@ class ActiveBranch(object):
 
         """
 
-        self.active_branch = Name()
+        self.active_branch = Name1()
 
 
-class Name(object):
+class Name1(object):
 
     """Class:  Name
 
