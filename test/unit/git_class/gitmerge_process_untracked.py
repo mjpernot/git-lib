@@ -121,7 +121,7 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
-        test_process_remove_dir -> 
+        test_process_remove_dir -> Test with removal of directory.
         test_process_add_option -> Test with add option passed.
         test_process_remove_option -> Test with remove option passed.
         test_process_newfiles_list -> Test with new_files list set.

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [0.3.0] - 2020-02-24
+### Added
+- GitMerge.remove_branch:  Added method to remove branch name passed to method.
+- GitMerge.get_br_name:  Added method to return the current branch name.
+- GitMerge.detach_head:  Added method to checkout the head to the latest Commit ID.
+
+
 ## [0.2.0] - 2019-09-24
 ### Fixed
 - GitMerge.process_untracked:  Allow for the removal of untracked directories.

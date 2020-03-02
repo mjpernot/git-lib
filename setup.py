@@ -46,10 +46,11 @@ setuptools.setup(
         #  3 - Beta
         #  4 - Field
         #  5 - Production/Stable
-        "Development Status :: 3 - Beta",
+        "Development Status :: 4 - Field",
         "Operating System :: Linux",
         "Operating System :: Linux :: Centos",
         "Git :: Gitlab",
         "Git :: Github",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7"])
+        "Programming Language :: Python :: 2.6.6",
+        "Programming Language :: Python :: 2.7.5"])
