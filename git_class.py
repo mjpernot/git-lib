@@ -133,6 +133,9 @@ class GitMerge(GitClass):
         is_commits_ahead -> Gets diff - local branch is ahead of remote branch.
         is_commits_behind -> Gets diff - local branch is behind remote branch.
         is_remote_branch -> Determines if the branch exists in remote git repo.
+        detach_head -> Checkouts the head to the latest commit ID.
+        get_br_name -> Return the current branch name.
+        remove_branch -> Remove branch name passed to method.
 
     """
 
@@ -578,6 +581,57 @@ class GitMerge(GitClass):
 
         except git.exc.GitCommandError:
             return False
+
+    def detach_head(self, **kwargs):
+
+        """Function:  detach_head
+
+        Description:  Checkouts the head to the latest commit ID.  This is to
+            allow the head to become deatched.
+
+        Arguments:
+
+        """
+
+        self.gitcmd.checkout(str(self.gitrepo.active_branch.commit.hexsha))
+
+    def get_br_name(self, **kwargs):
+
+        """Function:  get_br_name
+
+        Description:  Return the current branch name.
+
+        Arguments:
+            (output) Current branch name.
+
+        """
+
+        return self.gitrepo.active_branch.name
+
+    def remove_branch(self, branch, **kwargs):
+
+        """Function:  remove_branch
+
+        Description:  Remove branch name passed to method.
+
+        Arguments:
+            (input) branch -> Branch name.
+            (output) status -> True|False - Status of remove command.
+            (output) msg -> Error messages, if any.
+
+        """
+
+        status = True
+        msg = None
+
+        if branch == self.get_br_name():
+            status = False
+            msg = "WARNING: Cannot remove branch if current branch."
+
+        else:
+            self.gitrepo.delete_head(branch)
+
+        return status, msg
 
 
 class GitConfig(GitClass):
