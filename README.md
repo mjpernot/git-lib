@@ -118,12 +118,12 @@ pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appd
 
 Install the project using git.
   * Replace **{Python_Project}** with the baseline path of the python program.
-  * Replace **{Branch_Name}** with the name of the Git branch being tested.  See Git Merge Request.
+  * If pulling down another branch other than master then use the "--branch {Branch_Name}" option.
 
 ```
 umask 022
 cd {Python_Project}
-git clone --branch {Branch_Name} git@sc.appdev.proj.coe.ic.gov:JAC-DSXD/git-lib.git
+git clone git@sc.appdev.proj.coe.ic.gov:JAC-DSXD/git-lib.git
 ```
 
 Install/upgrade system modules:
