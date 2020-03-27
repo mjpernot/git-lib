@@ -608,7 +608,7 @@ class GitMerge(GitClass):
 
         return self.gitrepo.active_branch.name
 
-    def remove_branch(self, branch, **kwargs):
+    def remove_branch(self, branch, no_chk=False, **kwargs):
 
         """Function:  remove_branch
 
@@ -616,6 +616,7 @@ class GitMerge(GitClass):
 
         Arguments:
             (input) branch -> Branch name.
+            (input) no_chk -> True|False - Suspend checking if current branch.
             (output) status -> True|False - Status of remove command.
             (output) msg -> Error messages, if any.
 
@@ -624,12 +625,12 @@ class GitMerge(GitClass):
         status = True
         msg = None
 
-        if branch == self.get_br_name():
-            status = False
-            msg = "WARNING: Cannot remove branch if current branch."
+        if no_chk or branch != self.get_br_name():
+            self.gitrepo.delete_head(branch)
 
         else:
-            self.gitrepo.delete_head(branch)
+            status = False
+            msg = "WARNING: Cannot remove branch if current branch."
 
         return status, msg
 
