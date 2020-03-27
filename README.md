@@ -68,9 +68,9 @@ Add the following lines under the "Install supporting classes and libraries" sec
    pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
 
-##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates, if needed.
+##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates, if required.
 
-Modify the requirements.txt file
+Modify the requirements.txt file:
 ```
 vim {Other_Python_Project}/requirements.txt
 ```
@@ -93,8 +93,7 @@ cd {Python_Project}
 git clone git@sc.appdev.proj.coe.ic.gov:JAC-DSXD/git-lib.git
 ```
 
-Install/upgrade system modules.
-
+Install/upgrade system modules:
 ```
 cd git-lib
 sudo bash
@@ -103,7 +102,7 @@ pip install -r requirements.txt --upgrade --trusted-host pypi.appdev.proj.coe.ic
 exit
 ```
 
-Install supporting classes and libraries.
+Install supporting classes and libraries:
 ```
 pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
@@ -127,8 +126,7 @@ cd {Python_Project}
 git clone --branch {Branch_Name} git@sc.appdev.proj.coe.ic.gov:JAC-DSXD/git-lib.git
 ```
 
-Install/upgrade system modules.
-
+Install/upgrade system modules:
 ```
 cd git-lib
 sudo bash
@@ -137,7 +135,7 @@ pip install -r requirements.txt --upgrade --trusted-host pypi.appdev.proj.coe.ic
 exit
 ```
 
-Install supporting classes and libraries.
+Install supporting classes and libraries:
 ```
 pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
@@ -145,49 +143,15 @@ pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appd
 # Unit test runs for git_class.py:
   * Replace **{Python_Project}** with the baseline path of the python program.
 
-### Unit tests
+### Unit testing:
 ```
 cd {Python_Project}/git-lib
-test/unit/git_class/gitclass_init.py
-test/unit/git_class/gitclass_create_repo.py
-test/unit/git_class/gitclass_create_init.py
-test/unit/git_class/gitclass_create_cmd.py
-test/unit/git_class/gitconfig_init.py
-test/unit/git_class/gitconfig_get_email.py
-test/unit/git_class/gitconfig_get_user.py
-test/unit/git_class/gitconfig_set_email.py
-test/unit/git_class/gitconfig_set_user.py
-test/unit/git_class/gitmerge_init.py
-test/unit/git_class/gitmerge_detach_head.py
-test/unit/git_class/gitmerge_get_br_name.py
-test/unit/git_class/gitmerge_remove_branch.py
-test/unit/git_class/gitmerge_set_remote.py
-test/unit/git_class/gitmerge_rename_br.py
-test/unit/git_class/gitmerge_priority_merge.py
-test/unit/git_class/gitmerge_is_untracked.py
-test/unit/git_class/gitmerge_is_remote.py
-test/unit/git_class/gitmerge_is_remote_branch.py
-test/unit/git_class/gitmerge_is_dirty.py
-test/unit/git_class/gitmerge_is_commits_behind.py
-test/unit/git_class/gitmerge_is_commits_ahead.py
-test/unit/git_class/gitmerge_git_pu.py
-test/unit/git_class/gitmerge_git_fetch.py
-test/unit/git_class/gitmerge_git_co.py
-test/unit/git_class/gitmerge_create_gitrepo.py
-test/unit/git_class/gitmerge_commits_diff.py
-test/unit/git_class/gitmerge_process_untracked.py
-test/unit/git_class/gitmerge_process_dirty.py
-test/unit/git_class/gitmerge_get_untracked.py
-test/unit/git_class/gitmerge_get_dirty.py
-```
-
-### All unit testing
-```
 test/unit/git_class/unit_test_run.sh
 ```
 
-### Code coverage program
+### Code coverage unit testing:
 ```
+cd {Python_Project}/git-lib
 test/unit/git_class/code_coverage.sh
 ```
 
