@@ -68,7 +68,7 @@ Add the following lines under the "Install supporting classes and libraries" sec
    pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
 
-##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates, if required.
+##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates.
 
 Modify the requirements.txt file:
 ```
