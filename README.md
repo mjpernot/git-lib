@@ -33,38 +33,55 @@
 ### Pip Installation:
   * Replace **{Other_Python_Project}** with the baseline path of another python program.
 
-Create requirements file in another program's project to install git-lib as a library module.
+##### Create requirements file in another program's project to install git-lib as a library module.
 
 Create requirements-git-lib.txt file:
 ```
 vim {Other_Python_Project}/requirements-git-lib.txt
 ```
 
-Add the following lines to the file:
+Add the following lines to the requirements-git-lib.txt file:
 ```
 git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib
+```
+
+Create requirements-python-lib.txt file:
+```
+vim {Other_Python_Project}/requirements-python-lib.txt
+```
+
+Add the following lines to the requirements-python-lib.txt file:
+```
 git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/python-lib.git#egg=python-lib
 ```
 
-```
-echo "git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib" >> {Other_Python_Project}/requirements-git-lib.txt
-echo "git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/python-lib.git#egg=python-lib" >> {Other_Python_Project}/requirements-python-lib.txt
-```
+##### Modify the other program's README.md file to add the pip commands under the "Install supporting classes and libraries" section.
 
-Place the following commands into the another program's README.md file under the "Install supporting classes and libraries" section.
-   pip install -r requirements-git-lib.txt --target git_lib --trusted-host pypi.appdev.proj.coe.ic.gov
-   pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
- 
+Modify the README.md file:
 ```
 vim {Other_Python_Project}/README.md
 ```
 
-Add the general Git library requirements.txt to the another program's requirements.txt file and remove any duplicates.
-
+Add the following lines under the "Install supporting classes and libraries" section.
 ```
-cat requirements.txt >> {Other_Python_Project}/requirements.txt
+   pip install -r requirements-git-lib.txt --target git_lib --trusted-host pypi.appdev.proj.coe.ic.gov
+   pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
+```
+
+##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates, if needed.
+
+Modify the requirements.txt file
+```
 vim {Other_Python_Project}/requirements.txt
 ```
+
+Add the following lines to the requirements.txt file:
+```
+gitdb2==2.0.4
+GitPython==2.1.8
+smmap2==2.0.4
+```
+
 
 ### Git Installation:
 
