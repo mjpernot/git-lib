@@ -33,16 +33,17 @@
 ### Pip Installation:
   * Replace **{Other_Python_Project}** with the baseline path of another python program.
 
-Create requirements-git-lib.txt file in another program's project to install git-lib as a library module.
+Create requirements file in another program's project to install git-lib as a library module.
+
+Create requirements-git-lib.txt file:
+```
+vim {Other_Python_Project}/requirements-git-lib.txt
+```
 
 Add the following lines to the file:
 ```
 git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib
 git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/python-lib.git#egg=python-lib
-```
-
-```
-vim {Other_Python_Project}/requirements-git-lib.txt
 ```
 
 ```
