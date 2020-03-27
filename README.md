@@ -1,8 +1,8 @@
-# Python project that contains libraries and classes for Git use.
+# Python project that contains libraries and classes for Git repository use.
 # Classification (U)
 
 # Description:
-  This program is used to interact with local and remote Git repositories and have capbility to merge repositories.  It contains classes and libraries to interact with local and remote Git repositories.
+  This program is used to interact with local and remote Git repositories and have capbility to merge repositories.  It contains classes and libraries for both local and remote Git repositories.
 
 ###  This README file is broken down into the following sections:
   * Features
@@ -20,8 +20,6 @@
 # Prerequisites:
 
   * List of Linux packages that need to be installed on the server.
-    - python-libs
-    - python-devel
     - git
     - python-pip
 
@@ -30,12 +28,22 @@
 
 
 # Installation:
-  There are two types of installs: pip and git.  Pip will only install the program modules and classes, whereas git will install all modules and classes including testing programs along with README.md and CHANGELOG.md files.  The Pip installation will be modifying another program's project to install these supporting librarues via pip.
+  There are two types of installs: pip and git.
 
 ### Pip Installation:
   * Replace **{Other_Python_Project}** with the baseline path of another python program.
 
-Create requirements-git-lib.txt file in another program's project.
+Create requirements-git-lib.txt file in another program's project to install git-lib as a library module.
+
+Add the following lines to the file:
+```
+git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib
+git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/python-lib.git#egg=python-lib
+```
+
+```
+vim {Other_Python_Project}/requirements-git-lib.txt
+```
 
 ```
 echo "git+ssh://git@sc.appdev.proj.coe.ic.gov/JAC-DSXD/git-lib.git#egg=git-lib" >> {Other_Python_Project}/requirements-git-lib.txt
