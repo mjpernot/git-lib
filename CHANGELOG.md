@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [0.3.1] - 2020-03-27
+### Fixed
+- GitMerge.remove_branch:  Added no_chk argument to suspend checking of current branch.
+
+
 ## [0.3.0] - 2020-02-24
 ### Added
 - GitMerge.remove_branch:  Added method to remove branch name passed to method.

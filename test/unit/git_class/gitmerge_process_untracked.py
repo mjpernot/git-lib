@@ -145,6 +145,7 @@ class UnitTest(unittest.TestCase):
         self.url = "URL"
         self.branch = "Remote_branch"
         self.mod_branch = "Mod_branch"
+        self.git_set_data = "index untracked_files"
 
         self.gitr = git_class.GitMerge(self.repo_name, self.git_dir, self.url,
                                        self.branch, self.mod_branch)
@@ -167,7 +168,7 @@ class UnitTest(unittest.TestCase):
         mock_shutil.rmtree.return_value = True
         mock_os.path.isdir.return_value = True
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list1)
         self.gitr.new_files = self.new_list2
@@ -191,7 +192,7 @@ class UnitTest(unittest.TestCase):
         mock_lib.rm_file.return_value = True
         mock_os.path.isdir.return_value = False
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list1)
         self.gitr.new_files = self.new_list2
@@ -215,7 +216,7 @@ class UnitTest(unittest.TestCase):
         mock_lib.rm_file.return_value = True
         mock_os.path.isdir.return_value = False
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list1)
         self.gitr.new_files = self.new_list2
@@ -239,7 +240,7 @@ class UnitTest(unittest.TestCase):
         mock_lib.rm_file.return_value = True
         mock_os.path.isdir.return_value = False
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list1)
         self.gitr.new_files = self.new_list2
@@ -263,7 +264,7 @@ class UnitTest(unittest.TestCase):
         mock_lib.rm_file.return_value = True
         mock_os.path.isdir.return_value = False
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list2)
 
@@ -281,7 +282,7 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
+        GIT = collections.namedtuple('GIT', self.git_set_data)
         DIFF = Diff()
         self.gitr.gitrepo = GIT(DIFF, self.new_list1)
 
