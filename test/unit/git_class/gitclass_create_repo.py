@@ -60,6 +60,8 @@ class UnitTest(unittest.TestCase):
 
         self.gitc = git_class.GitClass()
         self.repo_dir = "/directory/git"
+        self.git_class = "Git Init Class Instance"
+        self.results = "Git Init Class Instance"
 
     @mock.patch("git_class.git")
     def test_repodir_arg(self, mock_git):
@@ -72,13 +74,13 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        mock_git.Repo.return_value = "Git Class Instance"
+        mock_git.Repo.return_value = self.git_class
 
         self.gitc.create_repo(self.repo_dir)
 
-        self.assertEqual((self.gitc.gitrepo, self.gitc.gitcmd,
-                          self.gitc.repo_dir),
-                         ("Git Class Instance", None, self.repo_dir))
+        self.assertEqual((
+            self.gitc.gitrepo, self.gitc.gitcmd, self.gitc.repo_dir),
+                         (self.results, None, self.repo_dir))
 
     @mock.patch("git_class.git")
     def test_default_arg(self, mock_git):
@@ -91,13 +93,13 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        mock_git.Repo.return_value = "Git Class Instance"
+        mock_git.Repo.return_value = self.git_class
 
         self.gitc.create_repo()
 
-        self.assertEqual((self.gitc.gitrepo, self.gitc.gitcmd,
-                          self.gitc.repo_dir),
-                         ("Git Class Instance", None, "."))
+        self.assertEqual((
+            self.gitc.gitrepo, self.gitc.gitcmd, self.gitc.repo_dir),
+                         (self.results, None, "."))
 
 
 if __name__ == "__main__":
