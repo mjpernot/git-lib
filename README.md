@@ -19,11 +19,11 @@
 
 # Prerequisites:
 
-### List of Linux packages that need to be installed on the server:
-  * git
-  * python-pip
+  * List of Linux packages that need to be installed on the server:
+    - git
+    - python-pip
 
-  * Local class/library dependencies within the program structure
+  * Local class/library dependencies within the program structure:
     - lib/gen_libs
 
 
@@ -140,16 +140,16 @@ Install supporting classes and libraries:
 pip install -r requirements-python-lib.txt --target lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
 
-# Unit test runs for git_class.py:
+### Unit test runs:
   * Replace **{Python_Project}** with the baseline path of the python program.
 
-### Unit testing:
+##### Unit testing:
 ```
 cd {Python_Project}/git-lib
 test/unit/git_class/unit_test_run.sh
 ```
 
-### Code coverage unit testing:
+##### Code coverage unit testing:
 ```
 cd {Python_Project}/git-lib
 test/unit/git_class/code_coverage.sh
