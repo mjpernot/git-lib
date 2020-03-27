@@ -19,9 +19,9 @@
 
 # Prerequisites:
 
-  * List of Linux packages that need to be installed on the server:
-    - git
-    - python-pip
+### List of Linux packages that need to be installed on the server:
+  * git
+  * python-pip
 
   * Local class/library dependencies within the program structure
     - lib/gen_libs
