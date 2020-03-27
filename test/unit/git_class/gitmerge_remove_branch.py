@@ -68,6 +68,7 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
+        test_no_chk_option -> Test with no_chk option set to True.
         test_other_branch -> Test with removing another branch.
         test_current_branch -> Test with removing current branch.
 
@@ -93,6 +94,22 @@ class UnitTest(unittest.TestCase):
 
         self.gitr = git_class.GitMerge(self.repo_name, self.git_dir, self.url,
                                        self.branch, self.mod_branch)
+
+    @mock.patch("git_class.GitMerge.get_br_name",
+                mock.Mock(return_value="New_Branch"))
+    def test_no_chk_option(self):
+
+        """Function:  test_no_chk_option
+
+        Description:  Test with no_chk option set to True.
+
+        Arguments:
+
+        """
+
+        self.gitr.gitrepo = DeleteHead()
+        self.assertEqual(self.gitr.remove_branch(
+            self.branch_name, no_chk=True), (True, None))
 
     @mock.patch("git_class.GitMerge.get_br_name",
                 mock.Mock(return_value="New_Branch"))
