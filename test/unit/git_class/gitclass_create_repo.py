@@ -80,7 +80,7 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual((
             self.gitc.gitrepo, self.gitc.gitcmd, self.gitc.repo_dir),
-                         (self.results, None, self.repo_dir))
+            (self.results, None, self.repo_dir))
 
     @mock.patch("git_class.git")
     def test_default_arg(self, mock_git):
@@ -99,7 +99,7 @@ class UnitTest(unittest.TestCase):
 
         self.assertEqual((
             self.gitc.gitrepo, self.gitc.gitcmd, self.gitc.repo_dir),
-                         (self.results, None, "."))
+            (self.results, None, "."))
 
 
 if __name__ == "__main__":
