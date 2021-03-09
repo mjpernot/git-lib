@@ -525,7 +525,7 @@ class GitMerge(GitClass):
 
         """
 
-        return sum(1 for x in self.gitrepo.iter_commits(data_str))
+        return sum(1 for _ in self.gitrepo.iter_commits(data_str))
 
     def is_commits_ahead(self, branch):
 
