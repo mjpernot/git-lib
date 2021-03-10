@@ -8,6 +8,7 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 - General Release
 
 ### Changed
+- GitMerge.priority_merge:  Add option to merge unrelated git histories.
 - Removed uncessary \*\*kwargs from methods function paramters.
 
 

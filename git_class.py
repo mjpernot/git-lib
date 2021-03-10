@@ -429,7 +429,7 @@ class GitMerge(GitClass):
 
         return status, msg
 
-    def priority_merge(self, branch=None):
+    def priority_merge(self, branch=None, **kwargs):
 
         """Function:  priority_merge
 
@@ -439,6 +439,8 @@ class GitMerge(GitClass):
 
         Arguments:
             (input) branch -> Name of branch to merge with current branch.
+            (input) **kwargs:
+                allow -> True|False - Allow merge of unrelated histories.
             (output) status -> True|False - Success of command.
             (output) msg -> Dictionary of return error code.
 
@@ -450,9 +452,13 @@ class GitMerge(GitClass):
         if not branch:
             branch = self.mod_branch
 
+        arg_list = ["--no-ff", "-s", "recursive", "-X", "theirs", branch]
+
+        if kwargs.get("allow", False):
+            arg_list.append("--allow-unrelated-histories")
+
         try:
-            self.gitcmd.merge("--no-ff", "-s", "recursive", "-X", "theirs",
-                              branch)
+            self.gitcmd.merge(arg_list)
 
         except git.exc.GitCommandError as (code):
             status = False
