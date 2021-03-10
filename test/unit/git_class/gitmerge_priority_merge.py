@@ -63,8 +63,12 @@ def merge(arg_list):
 
     """
 
+    status = True
+
     if arg_list:
-        pass
+        status = True
+
+    return status
 
 
 class UnitTest(unittest.TestCase):
