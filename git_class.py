@@ -2,7 +2,8 @@
 
 """Program:  git_class.py
 
-    Description:  Class that has class definitions for git repository.
+    Description:  Class that has class definitions and methods for connecting
+        to and using local and remote git repositories.
 
     Classes:
         GitClass
@@ -63,7 +64,8 @@ class GitClass(object):
 
         """Method:  create_repo
 
-        Description:  Create a git.Repo instance.
+        Description:  Create a git instance to an existing local git
+            repository.
 
         Arguments:
             repo_dir -> Git repository path name.
@@ -79,7 +81,9 @@ class GitClass(object):
 
         """Method:  create_cmd
 
-        Description:  Create a git.Repo.git command line instance.
+        Description:  Create a git command line instance.
+
+        Note:  An existing git instance must already been initialized.
 
         Arguments:
 
@@ -92,8 +96,9 @@ class GitClass(object):
 
         """Method:  create_init
 
-        Description:  Create a git.Repo.init instance to an existing git
-            repository or creates a new git repository if one does not exist.
+        Description:  Create an instance to an existing git repository or
+            creates a new git repository and directory if the repository
+            directory does not exist.
 
         Arguments:
             repo_dir -> Git repository path name.
