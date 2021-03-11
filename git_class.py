@@ -115,8 +115,8 @@ class GitMerge(GitClass):
 
     """Class:  GitMerge
 
-    Description:  Class that handles operations of merging a git repository
-        with a remote git repository.
+    Description:  Class that handles operations of merging a non-local git
+        repository with a remote git repository.
 
     Methods:
         __init__ -> Class instance initilization.
@@ -151,11 +151,11 @@ class GitMerge(GitClass):
         Description:  Initialization of an instance of the GitMerge class.
 
         Arguments:
-            repo_name -> Name of repository.
-            git_dir -> Directory path to the local git repo.
+            repo_name -> Name of git repository.
+            git_dir -> Directory path to the local git repository.
             url -> URL to the remote git repository.
             branch -> Name of branch at remote to be merged with.
-            mod_branch -> Name of branch to be merged into remote.
+            mod_branch -> Name of temporary branch to be merged into remote.
 
         """
 
@@ -205,7 +205,7 @@ class GitMerge(GitClass):
         Description:  Checks to see if remote git repository exists.
 
         Arguments:
-            (output) True|False -> Whether the directory is a git repository.
+            (output) True|False -> Is URL a remote git repository.
 
         """
 
