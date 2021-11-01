@@ -24,14 +24,12 @@ else:
     import unittest
 
 # Third-party
-import mock
 import git
 import collections
 
 # Local
 sys.path.append(os.getcwd())
 import git_class
-import lib.gen_libs as gen_libs
 import version
 
 __version__ = version.__version__
@@ -44,11 +42,14 @@ def push3(option):
     Description:  Method stub holder for git.Repo.git.push().
 
     Arguments:
-        option -> Stub holder.
 
     """
 
-    raise git.exc.GitCommandError("git", 2, "stderr")
+    if option:
+        raise git.exc.GitCommandError("git", 2, "stderr")
+
+    else:
+        raise git.exc.GitCommandError("git", 2, "stderr")
 
 
 def push2(option):
@@ -58,11 +59,14 @@ def push2(option):
     Description:  Method stub holder for git.Repo.git.push().
 
     Arguments:
-        option -> Stub holder.
 
     """
 
-    raise git.exc.GitCommandError("git", 128, "stderr")
+    if option:
+        raise git.exc.GitCommandError("git", 128, "stderr")
+
+    else:
+        raise git.exc.GitCommandError("git", 128, "stderr")
 
 
 def push(option):
@@ -72,11 +76,11 @@ def push(option):
     Description:  Method stub holder for git.Repo.git.push().
 
     Arguments:
-        option -> Stub holder.
 
     """
 
-    pass
+    if option:
+        pass
 
 
 class UnitTest(unittest.TestCase):
@@ -86,11 +90,11 @@ class UnitTest(unittest.TestCase):
     Description:  Class which is a representation of a unit testing.
 
     Methods:
-        setUp -> Unit testing initilization.
-        test_git_pu_tags -> Test with passing tags option.
-        test_git_pu_2 -> Test with raised exception - 2 status.
-        test_git_pu_128 -> Test with raised exception - 128 status.
-        test_git_pu_true -> Test with successful ls_remote call.
+        setUp
+        test_git_pu_tags
+        test_git_pu_2
+        test_git_pu_128
+        test_git_pu_true
 
     """
 
@@ -123,8 +127,8 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'push')
-        self.gitr.gitcmd = GIT(push)
+        giti = collections.namedtuple('GIT', 'push')
+        self.gitr.gitcmd = giti(push)
 
         status, msg = self.gitr.git_pu(tags=True)
         self.assertEqual((status, msg), (True, {}))
@@ -139,8 +143,8 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'push')
-        self.gitr.gitcmd = GIT(push3)
+        giti = collections.namedtuple('GIT', 'push')
+        self.gitr.gitcmd = giti(push3)
 
         status, msg = self.gitr.git_pu()
         self.assertEqual((status, msg["status"]), (False, 2))
@@ -155,8 +159,8 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'push')
-        self.gitr.gitcmd = GIT(push2)
+        giti = collections.namedtuple('GIT', 'push')
+        self.gitr.gitcmd = giti(push2)
 
         status, msg = self.gitr.git_pu()
         self.assertEqual((status, msg["status"]), (False, 128))
@@ -171,8 +175,8 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'push')
-        self.gitr.gitcmd = GIT(push)
+        giti = collections.namedtuple('GIT', 'push')
+        self.gitr.gitcmd = giti(push)
 
         status, msg = self.gitr.git_pu()
         self.assertEqual((status, msg), (True, {}))
