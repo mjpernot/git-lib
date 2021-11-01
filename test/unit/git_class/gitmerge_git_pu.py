@@ -24,8 +24,8 @@ else:
     import unittest
 
 # Third-party
-import git
 import collections
+import git
 
 # Local
 sys.path.append(os.getcwd())

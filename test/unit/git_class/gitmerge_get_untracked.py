@@ -24,14 +24,11 @@ else:
     import unittest
 
 # Third-party
-import mock
-import git
 import collections
 
 # Local
 sys.path.append(os.getcwd())
 import git_class
-import lib.gen_libs as gen_libs
 import version
 
 __version__ = version.__version__
@@ -44,7 +41,7 @@ class Index(object):
     Description:  Class stub holder for git.gitrepo.index.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -68,7 +65,7 @@ class Diff(Index):
     Description:  Class stub holder for git.gitrepo.index.diff.
 
     Methods:
-        __init
+        __init__
         add
         commit
 

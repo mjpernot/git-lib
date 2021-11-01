@@ -24,8 +24,8 @@ else:
     import unittest
 
 # Third-party
-import git
 import collections
+import git
 
 # Local
 sys.path.append(os.getcwd())
@@ -35,7 +35,7 @@ import version
 __version__ = version.__version__
 
 
-def branch2(branch):
+def branch2(brch):
 
     """Function:  fetch2
 
@@ -45,7 +45,7 @@ def branch2(branch):
 
     """
 
-    if branch:
+    if brch:
         raise git.exc.GitCommandError("git", 128, "stderr")
 
 

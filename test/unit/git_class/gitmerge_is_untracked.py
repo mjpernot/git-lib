@@ -47,6 +47,9 @@ def is_untracked2(untracked_files):
     if untracked_files:
         return False
 
+    else:
+        return False
+
 
 def is_untracked(untracked_files):
 
@@ -59,6 +62,9 @@ def is_untracked(untracked_files):
     """
 
     if untracked_files:
+        return True
+
+    else:
         return True
 
 
