@@ -37,10 +37,10 @@ class GitClass(object):
         git repository and git command line instances.
 
     Methods:
-        __init__ -> Class instance initilization.
-        create_repo -> Create a git.Repo instance.
-        create_cmd -> Create a git.Repo.git command line instance.
-        create_init -> Create a git.Repo.init instance.
+        __init__
+        create_repo
+        create_cmd
+        create_init
 
     """
 
@@ -119,28 +119,28 @@ class GitMerge(GitClass):
         repository with a remote git repository.
 
     Methods:
-        __init__ -> Class instance initilization.
-        create_gitrepo -> Creates git repo and git command line instances.
-        set_remote -> Checks to see if remote git repository exists.
-        is_remote -> Checks to see if remote git repository exists.
-        process_dirty -> Process any dirty files.
-        process_untracked -> Process any untracked files.
-        get_dirty -> Find any dirty (i.e. removed or modified) files.
-        get_untracked -> Find any untracked (i.e. new) files.
-        is_dirty -> Check to see if there is any dirty objects.
-        is_untracked -> Check to see if there is any new objects not tracked.
-        git_fetch -> Fetch from the remote Git repository the master branch.
-        rename_br -> Rename the current branch to a new name.
-        git_co -> Git checkout to another branch.
-        priority_merge -> Merge of branch with priority of existing branch.
-        git_pu -> Git push to remote respository.
-        commits_diff ->  Compares 2 branches & returns number of commits diff.
-        is_commits_ahead -> Gets diff - local branch is ahead of remote branch.
-        is_commits_behind -> Gets diff - local branch is behind remote branch.
-        is_remote_branch -> Determines if the branch exists in remote git repo.
-        detach_head -> Checkouts the head to the latest commit ID.
-        get_br_name -> Return the current branch name.
-        remove_branch -> Remove branch name passed to method.
+        __init__
+        create_gitrepo
+        set_remote
+        is_remote
+        process_dirty
+        process_untracked
+        get_dirty
+        get_untracked
+        is_dirty
+        is_untracked
+        git_fetch
+        rename_br
+        git_co
+        priority_merge
+        git_pu
+        commits_diff
+        is_commits_ahead
+        is_commits_behind
+        is_remote_branch
+        detach_head
+        get_br_name
+        remove_branch
 
     """
 
@@ -653,11 +653,11 @@ class GitConfig(GitClass):
     Description:  Class that handles configuration of the local git repository.
 
     Methods:
-        __init__ -> Class instance initilization.
-        get_email -> Return the email address bound to the git repository.
-        get_user -> Return the user name bound to the git repository.
-        set_email -> Set the email address for the local git repository.
-        set_user -> Set the user name for the local git repository.
+        __init__
+        get_email
+        get_user
+        set_email
+        set_user
 
     """
 
