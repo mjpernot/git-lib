@@ -438,9 +438,8 @@ class GitMerge(GitClass):
 
         """Function:  priority_merge
 
-        Description:  Merge of branch with priority of existing branch.
-
-        NOTE:  The branch will have priority over the existing branch.
+        Description:  Merge of a new branch with an existing branch, with
+            the priority on the new branch.
 
         Arguments:
             (input) branch -> Name of branch to merge with current branch.
