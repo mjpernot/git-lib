@@ -44,7 +44,7 @@ class Index(object):
     Description:  Class stub holder for git.gitrepo.index.
 
     Methods:
-        __init -> Class initilization.
+        __init
 
     """
 
@@ -68,9 +68,9 @@ class Diff(Index):
     Description:  Class stub holder for git.gitrepo.index.diff.
 
     Methods:
-        __init -> Class initilization.
-        add -> Method stub holder for git.gitrepo.index.add().
-        commit -> Method stub holder for git.gitrepo.index.commit().
+        __init
+        add
+        commit
 
     """
 
@@ -85,6 +85,8 @@ class Diff(Index):
         """
 
         super(Diff, self).__init__()
+        self.new_files = None
+        self.msg = None
 
     def add(self, new_files):
 
@@ -93,9 +95,10 @@ class Diff(Index):
         Description:  Method stub holder for git.gitrepo.index.add().
 
         Arguments:
-            new_files -> Stub holder.
 
         """
+
+        self.new_files = new_files
 
         return True
 
@@ -106,9 +109,10 @@ class Diff(Index):
         Description:  Method stub holder for git.gitrepo.index.commit().
 
         Arguments:
-            msg -> Stub holder.
 
         """
+
+        self.msg = msg
 
         return True
 
@@ -120,9 +124,9 @@ class UnitTest(unittest.TestCase):
     Description:  Class which is a representation of a unit testing.
 
     Methods:
-        setUp -> Unit testing initilization.
-        test_process_data_list -> Test with data in list set.
-        test_process_empty_list -> Test with empty list set.
+        setUp
+        test_process_data_list
+        test_process_empty_list
 
     """
 
@@ -158,9 +162,9 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
-        DIFF = Diff()
-        self.gitr.gitrepo = GIT(DIFF, self.new_list2)
+        giti = collections.namedtuple('GIT', 'index untracked_files')
+        diff = Diff()
+        self.gitr.gitrepo = giti(diff, self.new_list2)
 
         self.gitr.get_untracked()
 
@@ -176,9 +180,9 @@ class UnitTest(unittest.TestCase):
 
         """
 
-        GIT = collections.namedtuple('GIT', 'index untracked_files')
-        DIFF = Diff()
-        self.gitr.gitrepo = GIT(DIFF, self.new_list1)
+        giti = collections.namedtuple('GIT', 'index untracked_files')
+        diff = Diff()
+        self.gitr.gitrepo = giti(diff, self.new_list1)
 
         self.gitr.get_untracked()
 
