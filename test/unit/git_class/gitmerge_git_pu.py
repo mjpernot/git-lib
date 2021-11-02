@@ -64,8 +64,10 @@ def push2(option):
 
     """
 
+    status = 128
+
     if option:
-        raise git.exc.GitCommandError("git", 128, "stderr")
+        raise git.exc.GitCommandError("git", status, "stderr")
 
     else:
         raise git.exc.GitCommandError("git", 128, "stderr")
@@ -82,7 +84,7 @@ def push(option):
     """
 
     if option:
-        pass
+        return True
 
 
 class UnitTest(unittest.TestCase):

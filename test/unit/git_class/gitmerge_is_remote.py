@@ -60,7 +60,7 @@ def ls_remote(arg1):
     """
 
     if arg1:
-        pass
+        return True
 
 
 class UnitTest(unittest.TestCase):
