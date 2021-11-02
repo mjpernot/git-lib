@@ -45,11 +45,13 @@ def push3(option):
 
     """
 
+    status = 2
+
     if option:
-        raise git.exc.GitCommandError("git", 2, "stderr")
+        raise git.exc.GitCommandError("git", status, "stderr")
 
     else:
-        raise git.exc.GitCommandError("git", 2, "stderr")
+        raise git.exc.GitCommandError("git", status, "stderr")
 
 
 def push2(option):
