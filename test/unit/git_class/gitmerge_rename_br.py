@@ -60,7 +60,7 @@ def branch(brch):
     """
 
     if brch:
-        pass
+        return True
 
 
 class UnitTest(unittest.TestCase):
