@@ -15,6 +15,7 @@ pipeline {
                 virtualenv test_env
                 source test_env/bin/activate
                 pip2 install mock==2.0.0 --user
+                pip2 install smmap2==2.0.4 --user
                 pip2 install gitpython==2.1.8 --user
                 pip2 install gitdb2==2.0.4 --user
                 ./test/unit/git_class/gitmerge_init.py
