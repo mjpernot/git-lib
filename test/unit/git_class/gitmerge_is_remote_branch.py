@@ -60,7 +60,7 @@ def rev_parse(arg1, branch):
     """
 
     if arg1 and branch:
-        pass
+        return True
 
 
 class UnitTest(unittest.TestCase):
