@@ -56,7 +56,7 @@ class DeleteHead(object):
         """
 
         if branch:
-            pass
+            return True
 
 
 class UnitTest(unittest.TestCase):
