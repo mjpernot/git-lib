@@ -46,11 +46,7 @@ def is_untracked2(untracked_files):
 
     status = False
 
-    if untracked_files:
-        return status
-
-    else:
-        return False
+    return status if untracked_files else False
 
 
 def is_untracked(untracked_files):
@@ -65,11 +61,7 @@ def is_untracked(untracked_files):
 
     status = True
 
-    if untracked_files:
-        return status
-
-    else:
-        return True
+    return status if untracked_files else True
 
 
 class UnitTest(unittest.TestCase):

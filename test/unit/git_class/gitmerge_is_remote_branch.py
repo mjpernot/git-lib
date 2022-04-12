@@ -59,8 +59,7 @@ def rev_parse(arg1, branch):
 
     """
 
-    if arg1 and branch:
-        return True
+    return True if arg1 and branch else False
 
 
 class UnitTest(unittest.TestCase):

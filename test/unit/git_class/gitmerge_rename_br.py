@@ -59,8 +59,7 @@ def branch(brch):
 
     """
 
-    if brch:
-        return True
+    return True if brch else False
 
 
 class UnitTest(unittest.TestCase):
