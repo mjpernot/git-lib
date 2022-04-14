@@ -59,8 +59,7 @@ def ls_remote(arg1):
 
     """
 
-    if arg1:
-        return True
+    return True if arg1 else False
 
 
 class UnitTest(unittest.TestCase):

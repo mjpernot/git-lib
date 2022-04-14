@@ -51,7 +51,7 @@ class GitClass(object):
         Description:  Initialization of an instance of the GitClass class.
 
         Arguments:
-            repo_dir -> Git repository path name.
+            repo_dir -> Git repository path name
 
         """
 
@@ -68,7 +68,7 @@ class GitClass(object):
             repository.
 
         Arguments:
-            repo_dir -> Git repository path name.
+            repo_dir -> Git repository path name
 
         """
 
@@ -101,7 +101,7 @@ class GitClass(object):
             directory does not exist.
 
         Arguments:
-            repo_dir -> Git repository path name.
+            repo_dir -> Git repository path name
 
         """
 
@@ -151,11 +151,11 @@ class GitMerge(GitClass):
         Description:  Initialization of an instance of the GitMerge class.
 
         Arguments:
-            repo_name -> Name of git repository.
-            git_dir -> Directory path to the local git repository.
-            url -> URL to the remote git repository.
-            branch -> Name of branch at remote to be merged with.
-            mod_branch -> Name of temporary branch to be merged into remote.
+            repo_name -> Name of git repository
+            git_dir -> Directory path to the local git repository
+            url -> URL to the remote git repository
+            branch -> Name of branch at remote to be merged with
+            mod_branch -> Name of temporary branch to be merged into remote
 
         """
 
@@ -205,7 +205,7 @@ class GitMerge(GitClass):
         Description:  Checks to see if remote git repository exists.
 
         Arguments:
-            (output) True|False -> Is URL a remote git repository.
+            (output) True|False -> Is URL a remote git repository?
 
         """
 
@@ -223,7 +223,7 @@ class GitMerge(GitClass):
         Description:  Process any dirty files.
 
         Arguments:
-            (input) option -> revert|commit - options for the changes.
+            (input) option -> revert|commit - options for the changes
 
         """
 
@@ -262,7 +262,7 @@ class GitMerge(GitClass):
         Description:  Process any untracked (new) files.
 
         Arguments:
-            (input) option -> add|remove - Options allowed for untracked files.
+            (input) option -> add|remove - Options allowed for untracked files
 
         """
 
@@ -322,7 +322,7 @@ class GitMerge(GitClass):
         Description:  Check to see if there is any dirty objects.
 
         Arguments:
-            (output) True|False -> If dirty objects detected.
+            (output) True|False -> Is dirty objects detected?
 
         """
 
@@ -335,7 +335,7 @@ class GitMerge(GitClass):
         Description:  Check to see if there is any new objects not tracked.
 
         Arguments:
-            (output) True|False -> If untracked objects detected.
+            (output) True|False -> Is untracked objects detected?
 
         """
 
@@ -348,9 +348,9 @@ class GitMerge(GitClass):
         Description:  Fetch from the remote Git repository the master branch.
 
         Arguments:
-            (input) cnt -> Number of recursive calls on method.
-            (output) status -> True|False - Success of command.
-            (output) msg -> Dictionary of return error code.
+            (input) cnt -> Number of recursive calls on method
+            (output) status -> True|False - Success of command
+            (output) msg -> Dictionary of return error code
 
         """
 
@@ -381,9 +381,9 @@ class GitMerge(GitClass):
         Description:  Rename the current branch to a new name.
 
         Arguments:
-            (input) branch -> Name of new branch.
-            (output) status -> True|False - Success of command.
-            (output) msg -> Dictionary of return error code.
+            (input) branch -> Name of new branch
+            (output) status -> True|False - Success of command
+            (output) msg -> Dictionary of return error code
 
         """
 
@@ -411,9 +411,9 @@ class GitMerge(GitClass):
         Description:  Git checkout to another branch.
 
         Arguments:
-            (input) branch -> Name of branch to checkout.
-            (output) status -> True|False - Success of command.
-            (output) msg -> Dictionary of return error code.
+            (input) branch -> Name of branch to checkout
+            (output) status -> True|False - Success of command
+            (output) msg -> Dictionary of return error code
 
         """
 
@@ -442,11 +442,11 @@ class GitMerge(GitClass):
             the priority on the new branch.
 
         Arguments:
-            (input) branch -> Name of branch to merge with current branch.
+            (input) branch -> Name of branch to merge with current branch
             (input) **kwargs:
-                allow -> True|False - Allow merge of unrelated histories.
-            (output) status -> True|False - Success of command.
-            (output) msg -> Dictionary of return error code.
+                allow -> True|False - Allow merge of unrelated histories
+            (output) status -> True|False - Success of command
+            (output) msg -> Dictionary of return error code
 
         """
 
@@ -480,10 +480,10 @@ class GitMerge(GitClass):
         Description:  Git push to remote respository.
 
         Arguments:
-            (input) cnt -> Number of recursive calls on method.
-            (input) tags -> True|False - Push tags instead.
-            (output) status -> True|False - Success of command.
-            (output) msg -> Dictionary of return error code.
+            (input) cnt -> Number of recursive calls on method
+            (input) tags -> True|False - Push tags instead
+            (output) status -> True|False - Success of command
+            (output) msg -> Dictionary of return error code
 
         """
 
@@ -530,8 +530,8 @@ class GitMerge(GitClass):
                     "origin/BRANCH_NAME..BRANCH_NAME"
 
         Arguments:
-            (input) data_str -> Contains the order of branches to be compared.
-            (output) -> N commits difference between branches.
+            (input) data_str -> Contains the order of branches to be compared
+            (output) -> N commits difference between branches
 
         """
 
@@ -548,8 +548,8 @@ class GitMerge(GitClass):
                 >0 ->  Local branch is ahead of remote branch by N commits.
 
         Arguments:
-            (input) branch -> Branch being compared.
-            (output) -> N commits local branch ahead of remote branch.
+            (input) branch -> Branch being compared
+            (output) -> N commits local branch ahead of remote branch
 
         """
 
@@ -566,8 +566,8 @@ class GitMerge(GitClass):
                 >0 ->  Local branch is behind remote branch by N commits.
 
         Arguments:
-            (input) branch -> Branch being compares.
-            (output) -> N commits local branch behind remote branch.
+            (input) branch -> Branch being compares
+            (output) -> N commits local branch behind remote branch
 
         """
 
@@ -580,8 +580,8 @@ class GitMerge(GitClass):
         Description:  Determines if the branch exist in remote git repository.
 
         Arguments:
-            (input) branch -> Branch name.
-            (output) True|False -> The branch is in the remote git repo.
+            (input) branch -> Branch name
+            (output) True|False -> The branch is in the remote git repo
 
         """
 
@@ -612,7 +612,7 @@ class GitMerge(GitClass):
         Description:  Return the current branch name.
 
         Arguments:
-            (output) Current branch name.
+            (output) Current branch name
 
         """
 
@@ -625,10 +625,10 @@ class GitMerge(GitClass):
         Description:  Remove branch name passed to method.
 
         Arguments:
-            (input) branch -> Branch name.
-            (input) no_chk -> True|False - Suspend checking if current branch.
-            (output) status -> True|False - Status of remove command.
-            (output) msg -> Error messages, if any.
+            (input) branch -> Branch name
+            (input) no_chk -> True|False - Suspend checking if current branch
+            (output) status -> True|False - Status of remove command
+            (output) msg -> Error messages, if any
 
         """
 
@@ -670,7 +670,7 @@ class GitConfig(GitClass):
             Config reader and writer instances.
 
         Arguments:
-            repo_dir -> Directory path to a local git repo.
+            repo_dir -> Directory path to a local git repo
 
         """
 
@@ -687,7 +687,7 @@ class GitConfig(GitClass):
         Description:  Return the email address bound to the git repository.
 
         Arguments:
-            (output) Email address.
+            (output) Email address
 
         """
 
@@ -700,7 +700,7 @@ class GitConfig(GitClass):
         Description:  Return the user name bound to the git repository.
 
         Arguments:
-            (output) User name.
+            (output) User name
 
         """
 
@@ -713,7 +713,7 @@ class GitConfig(GitClass):
         Description:  Set the email address for the local git repository.
 
         Arguments:
-            (input) email -> Email address to be bound to local git repo.
+            (input) Email address to be bound to local git repo
 
         """
 
@@ -726,7 +726,7 @@ class GitConfig(GitClass):
         Description:  Set the user name for the local git repository.
 
         Arguments:
-            (input) name -> User name to be bound to local git repo.
+            (input) User name to be bound to local git repo
 
         """
 

@@ -1,6 +1,4 @@
-coverage==4.4.2
 smmap2==2.0.4
 gitdb2==2.0.4
 GitPython==2.1.8
-mock==2.0.0
-unittest2>=1.1.0
+simplejson==2.0.9

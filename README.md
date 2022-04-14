@@ -36,7 +36,7 @@ Create requirements-git-lib.txt file and requirements-python-lib.txt files:
 ```
 cd {Python_Project}
 cp requirements-git-lib.txt {Other_Python_Project}/requirements-git-lib.txt
-cp requirements-python-lib.txt {Other_Python_Project}/requirements-python-lib.txt
+cp requirements-python-lib.txt {Other_Python_Project}/requirements-git-python-lib.txt
 ```
 
 ##### Modify the other program's README.md file to add the pip commands under the "Install supporting classes and libraries" section.
@@ -45,7 +45,7 @@ Modify the {Other_Python_Project}/README.md file:
 
 ```
 pip install -r requirements-git-lib.txt --target git_lib --trusted-host pypi.appdev.proj.coe.ic.gov
-pip install -r requirements-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
+pip install -r requirements-git-python-lib.txt --target git_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
 
 ##### Add the general Git-lib requirements to the other program's requirements.txt file.  Remove any duplicates.
