@@ -83,8 +83,7 @@ def push(option):
 
     """
 
-    if option:
-        return True
+    return True if option else False
 
 
 class UnitTest(unittest.TestCase):

@@ -59,8 +59,7 @@ def checkout(branch):
 
     """
 
-    if branch:
-        return True
+    return True if branch else False
 
 
 class UnitTest(unittest.TestCase):

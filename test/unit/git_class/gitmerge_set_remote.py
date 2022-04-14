@@ -44,8 +44,7 @@ def remote(arg1, arg2, arg3):
 
     """
 
-    if arg1 and arg2 and arg3:
-        return True
+    return True if arg1 and arg2 and arg3 else False
 
 
 class UnitTest(unittest.TestCase):
