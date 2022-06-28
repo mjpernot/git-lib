@@ -6,6 +6,7 @@ The format is based on "Keep a Changelog".  This project adheres to Semantic Ver
 
 ## [1.0.3] - 2022-06-28
 - Number of minor fixes in support files.
+- Documentation updates.
 
 ## [1.0.2] - 2022-02-11
 - Number of minor fixes in support files.
