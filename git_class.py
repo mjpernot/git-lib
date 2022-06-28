@@ -3,7 +3,7 @@
 """Program:  git_class.py
 
     Description:  Class that has class definitions and methods for connecting
-        to and using local and remote git repositories.
+        to git repositories and using local and remote repositories.
 
     Classes:
         GitClass
