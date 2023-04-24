@@ -13,18 +13,22 @@
 """
 
 # Libraries and Global Variables
+from __future__ import absolute_import
 
 # Standard
 import os
 import time
 import shutil
-
-# Third-party
 import git
 
 # Local
-import lib.gen_libs as gen_libs
-import version
+try:
+    from .lib import gen_libs
+    from . import version
+
+except (ValueError, ImportError) as err:
+    import lib.gen_libs as gen_libs
+    import version
 
 __version__ = version.__version__
 
@@ -360,7 +364,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.fetch()
 
-        except git.exc.GitCommandError as (code):
+        except git.exc.GitCommandError as code:
             if code.status == 128 and cnt < 5:
                 time.sleep(5)
                 cnt += 1
@@ -396,7 +400,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.branch(branch)
 
-        except git.exc.GitCommandError as (code):
+        except git.exc.GitCommandError as code:
             status = False
             msg["status"] = code.status
             msg["stderr"] = code.stderr
@@ -426,7 +430,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.checkout(branch)
 
-        except git.exc.GitCommandError as (code):
+        except git.exc.GitCommandError as code:
             status = False
             msg["status"] = code.status
             msg["stderr"] = code.stderr
@@ -464,7 +468,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.merge(arg_list)
 
-        except git.exc.GitCommandError as (code):
+        except git.exc.GitCommandError as code:
             status = False
             msg["status"] = code.status
             msg["stdout"] = code.stdout
@@ -497,7 +501,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.push(option)
 
-        except git.exc.GitCommandError as (code):
+        except git.exc.GitCommandError as code:
             if code.status == 128 and cnt < 5:
                 time.sleep(5)
                 cnt += 1
