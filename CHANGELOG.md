@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [1.0.4] - 2022-12-16
+- Updated to work in Python 3 too
+- Upgraded python-lib to v2.9.4
+
+### Changed
+- Modified exception handler to Python 3 format.
+
+
 ## [1.0.3] - 2022-06-28
 - Number of minor fixes in support files.
 - Documentation updates.

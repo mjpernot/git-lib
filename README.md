@@ -5,21 +5,10 @@
   This project is used to interact with local and remote Git repositories and have capbility to merge repositories.  It contains classes and libraries for both local and remote Git repositories.
 
 ###  This README file is broken down into the following sections:
-  * Prerequisites
-    - Pip Installation
   * Installation
+    - Pip Installation
   * Testing
     - Unit
-
-
-# Prerequisites:
-
-  * List of Linux packages that need to be installed on the server:
-    - git
-    - python-pip
-
-  * Local class/library dependencies within the program structure:
-    - python-lib
 
 
 # Installation:
