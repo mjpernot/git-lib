@@ -50,25 +50,10 @@ python -m pip install -r requirements-git-python-lib.txt --target git_lib/lib --
 Add/modify the following lines to the {Other_Python_Project}/requirements.txt file:
 
 Centos 7 (Running Python 2.7):
-```
-ardet==3.0.4
-distro==1.6.0
-email==4.0.3
-smmap2==2.0.4
-gitdb2==2.0.4
-GitPython==2.1.8
-simplejson==2.0.9
-```
+{Python_Project}/requirements.txt
 
 Redhat 8 (Running Python 3.6):
-```
-chardet==3.0.4
-distro==1.6.0
-smmap2==2.0.4
-gitdb2==2.0.5
-GitPython==2.1.8
-simplejson==3.12.0
-```
+{Python_Project}/requirements3.txt
 
 
 ### Git Installation:
