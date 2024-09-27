@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [1.0.7] - 2024-09-27
+- Updated simplejson=3.13.2 for Python 3
+
+
 ## [1.0.6] - 2024-09-04
 - Updated python-lib to v3.0.4
 
