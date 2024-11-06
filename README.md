@@ -106,7 +106,7 @@ Install the project using the procedures in the Git Installation section.
 
 ```
 cd {Python_Project}/git-lib
-test/unit/git_class/unit_test_run.sh
+test/unit/git_class/unit_test_run3.sh
 ```
 
 ### Code Coverage:
