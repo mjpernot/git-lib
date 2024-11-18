@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [1.0.9] - 2024-11-18
+- Updated python-lib to v3.0.8
+
+### Fixed
+- Set chardet==3.0.4 for Python 3.
+
+### Deprecated
+- Support for Python 2.7
+
+
 ## [1.0.8] - 2024-11-05
 - Removed smmap2 for Python 3.
 - Removed gitdb2 for Python 3.
