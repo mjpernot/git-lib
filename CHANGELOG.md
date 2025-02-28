@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [1.0.10] - 2025-02-28
+### Changed
+- Documentation changes.
+
+
 ## [1.0.9] - 2024-11-18
 - Updated python-lib to v3.0.8
 

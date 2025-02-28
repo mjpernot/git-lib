@@ -22,8 +22,8 @@ import git
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -39,7 +39,8 @@ def branch2(brch):
     """
 
     if brch:
-        raise git.exc.GitCommandError("git", 128, "stderr")
+        raise git.exc.GitCommandError(                  # pylint:disable=E1101
+            "git", 128, "stderr")
 
 
 def branch(brch):
@@ -52,7 +53,7 @@ def branch(brch):
 
     """
 
-    return True if brch else False
+    return bool(brch)
 
 
 class UnitTest(unittest.TestCase):

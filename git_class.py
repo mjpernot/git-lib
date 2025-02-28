@@ -27,13 +27,13 @@ try:
     from . import version
 
 except (ValueError, ImportError) as err:
-    import lib.gen_libs as gen_libs
+    import lib.gen_libs as gen_libs                     # pylint:disable=R0402
     import version
 
 __version__ = version.__version__
 
 
-class GitClass(object):
+class GitClass(object):                                 # pylint:disable=R0205
 
     """Class:  GitClass
 
@@ -115,7 +115,7 @@ class GitClass(object):
         self.gitinit = git.Repo.init(self.repo_dir)
 
 
-class GitMerge(GitClass):
+class GitMerge(GitClass):                       # pylint:disable=R0902,R0904
 
     """Class:  GitMerge
 
@@ -148,7 +148,8 @@ class GitMerge(GitClass):
 
     """
 
-    def __init__(self, repo_name, git_dir, url, branch, mod_branch):
+    def __init__(                                       # pylint:disable=R0913
+            self, repo_name, git_dir, url, branch, mod_branch):
 
         """Method:  __init__
 
@@ -165,7 +166,7 @@ class GitMerge(GitClass):
 
         self.git_dir = git_dir
 
-        super(GitMerge, self).__init__(self.git_dir)
+        super(GitMerge, self).__init__(self.git_dir)    # pylint:disable=R1725
 
         self.repo_name = repo_name
         self.url = url
@@ -187,8 +188,8 @@ class GitMerge(GitClass):
 
         """
 
-        super(GitMerge, self).create_repo()
-        super(GitMerge, self).create_cmd()
+        super(GitMerge, self).create_repo()             # pylint:disable=R1725
+        super(GitMerge, self).create_cmd()              # pylint:disable=R1725
 
     def set_remote(self):
 
@@ -217,7 +218,7 @@ class GitMerge(GitClass):
             self.remote_info = self.gitcmd.ls_remote(self.url)
             return True
 
-        except git.exc.GitCommandError:
+        except git.exc.GitCommandError:                 # pylint:disable=E1101
             return False
 
     def process_dirty(self, option="revert"):
@@ -364,7 +365,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.fetch()
 
-        except git.exc.GitCommandError as code:
+        except git.exc.GitCommandError as code:         # pylint:disable=E1101
             if code.status == 128 and cnt < 5:
                 time.sleep(5)
                 cnt += 1
@@ -400,7 +401,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.branch(branch)
 
-        except git.exc.GitCommandError as code:
+        except git.exc.GitCommandError as code:         # pylint:disable=E1101
             status = False
             msg["status"] = code.status
             msg["stderr"] = code.stderr
@@ -430,7 +431,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.checkout(branch)
 
-        except git.exc.GitCommandError as code:
+        except git.exc.GitCommandError as code:         # pylint:disable=E1101
             status = False
             msg["status"] = code.status
             msg["stderr"] = code.stderr
@@ -468,7 +469,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.merge(arg_list)
 
-        except git.exc.GitCommandError as code:
+        except git.exc.GitCommandError as code:         # pylint:disable=E1101
             status = False
             msg["status"] = code.status
             msg["stdout"] = code.stdout
@@ -501,7 +502,7 @@ class GitMerge(GitClass):
         try:
             self.gitcmd.push(option)
 
-        except git.exc.GitCommandError as code:
+        except git.exc.GitCommandError as code:         # pylint:disable=E1101
             if code.status == 128 and cnt < 5:
                 time.sleep(5)
                 cnt += 1
@@ -593,7 +594,7 @@ class GitMerge(GitClass):
             self.br_commit = self.gitcmd.rev_parse("--verify", branch)
             return True
 
-        except git.exc.GitCommandError:
+        except git.exc.GitCommandError:                 # pylint:disable=E1101
             return False
 
     def detach_head(self):
@@ -678,7 +679,7 @@ class GitConfig(GitClass):
 
         """
 
-        super(GitConfig, self).__init__(repo_dir)
+        super(GitConfig, self).__init__(repo_dir)       # pylint:disable=R1725
 
         self.gitinit = git.Repo.init(self.repo_dir)
         self.reader = self.gitinit.config_reader()

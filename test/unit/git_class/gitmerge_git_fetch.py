@@ -22,8 +22,8 @@ import git
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -38,7 +38,8 @@ def fetch3():
 
     """
 
-    raise git.exc.GitCommandError("git", 2, "stderr")
+    raise git.exc.GitCommandError(                      # pylint:disable=E1101
+        "git", 2, "stderr")
 
 
 def fetch2():
@@ -51,7 +52,8 @@ def fetch2():
 
     """
 
-    raise git.exc.GitCommandError("git", 128, "stderr")
+    raise git.exc.GitCommandError(                      # pylint:disable=E1101
+        "git", 128, "stderr")
 
 
 def fetch():
@@ -63,8 +65,6 @@ def fetch():
     Arguments:
 
     """
-
-    pass
 
 
 class UnitTest(unittest.TestCase):

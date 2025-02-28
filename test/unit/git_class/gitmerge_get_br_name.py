@@ -20,20 +20,20 @@ import unittest
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
 
-class ActiveBranch(object):
+class ActiveBranch(object):                     # pylint:disable=R0903,R0205
 
     """Class:  ActiveBranch
 
     Description:  Class stub holder for git.gitrepo.active_branch.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -50,14 +50,14 @@ class ActiveBranch(object):
         self.active_branch = Name1()
 
 
-class Name1(object):
+class Name1(object):                            # pylint:disable=R0903,R0205
 
     """Class:  Name
 
     Description:  Class stub holder for git.gitrepo.active_branch.name.
 
     Methods:
-        __init
+        __init__
 
     """
 

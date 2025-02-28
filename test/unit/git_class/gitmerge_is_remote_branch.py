@@ -22,8 +22,8 @@ import git
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -39,7 +39,8 @@ def rev_parse2(arg1, branch):
     """
 
     if arg1 and branch:
-        raise git.exc.GitCommandError('git', 128)
+        raise git.exc.GitCommandError(                  # pylint:disable=E1101
+            'git', 128)
 
 
 def rev_parse(arg1, branch):
@@ -52,7 +53,7 @@ def rev_parse(arg1, branch):
 
     """
 
-    return True if arg1 and branch else False
+    return bool(arg1) and bool(branch)
 
 
 class UnitTest(unittest.TestCase):
