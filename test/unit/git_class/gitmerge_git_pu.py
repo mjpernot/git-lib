@@ -22,8 +22,8 @@ import git
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -41,10 +41,10 @@ def push3(option):
     status = 2
 
     if option:
-        raise git.exc.GitCommandError("git", status, "stderr")
+        raise git.exc.GitCommandError(                  # pylint:disable=E1101
+            "git", status, "stderr")
 
-    else:
-        raise git.exc.GitCommandError("git", 2, "stderr")
+    raise git.exc.GitCommandError("git", 2, "stderr")  # pylint:disable=E1101
 
 
 def push2(option):
@@ -60,10 +60,11 @@ def push2(option):
     status = 128
 
     if option:
-        raise git.exc.GitCommandError("git", status, "stderr")
+        raise git.exc.GitCommandError(                  # pylint:disable=E1101
+            "git", status, "stderr")
 
-    else:
-        raise git.exc.GitCommandError("git", 128, "stderr")
+    raise git.exc.GitCommandError(                      # pylint:disable=E1101
+        "git", 128, "stderr")
 
 
 def push(option):
@@ -76,7 +77,7 @@ def push(option):
 
     """
 
-    return True if option else False
+    return bool(option)
 
 
 class UnitTest(unittest.TestCase):

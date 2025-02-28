@@ -22,8 +22,8 @@ import git
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -39,7 +39,8 @@ def ls_remote2(arg1):
     """
 
     if arg1:
-        raise git.exc.GitCommandError('git', 128)
+        raise git.exc.GitCommandError(                  # pylint:disable=E1101
+            'git', 128)
 
 
 def ls_remote(arg1):
@@ -52,7 +53,7 @@ def ls_remote(arg1):
 
     """
 
-    return True if arg1 else False
+    return bool(arg1)
 
 
 class UnitTest(unittest.TestCase):

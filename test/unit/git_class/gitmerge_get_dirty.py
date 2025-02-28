@@ -21,20 +21,20 @@ import collections
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
 
-class Index(object):
+class Index(object):                            # pylint:disable=R0903,R0205
 
     """Class:  Index
 
     Description:  Class stub holder for git.gitrepo.index.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -48,17 +48,15 @@ class Index(object):
 
         """
 
-        pass
 
-
-class Diff(Index):
+class Diff(Index):                              # pylint:disable=R0903,R0205
 
     """Class:  Diff
 
     Description:  Class stub holder for git.gitrepo.index.diff.
 
     Methods:
-        __init
+        __init__
         diff
 
     """
@@ -73,7 +71,7 @@ class Diff(Index):
 
         """
 
-        super(Diff, self).__init__()
+        super(Diff, self).__init__()                    # pylint:disable=R1725
 
         self.test_type = test_type
         self.arg1 = None
