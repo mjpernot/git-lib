@@ -21,8 +21,8 @@ import collections
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
@@ -37,7 +37,7 @@ def remote(arg1, arg2, arg3):
 
     """
 
-    return True if arg1 and arg2 and arg3 else False
+    return bool(arg1) and bool(arg2) and bool(arg3)
 
 
 class UnitTest(unittest.TestCase):

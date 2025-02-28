@@ -21,13 +21,13 @@ import mock
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
 
-class DeleteHead(object):
+class DeleteHead(object):                       # pylint:disable=R0903,R0205
 
     """Class:  DeleteHead
 
@@ -48,7 +48,7 @@ class DeleteHead(object):
 
         """
 
-        return True if branch else False
+        return bool(branch)
 
 
 class UnitTest(unittest.TestCase):

@@ -20,20 +20,20 @@ import unittest
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
 
-class ActiveBranch(object):
+class ActiveBranch(object):                     # pylint:disable=R0903,R0205
 
     """Class:  ActiveBranch
 
     Description:  Class stub holder for git.gitrepo.active_branch.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -50,14 +50,14 @@ class ActiveBranch(object):
         self.active_branch = Commit1()
 
 
-class Commit1(object):
+class Commit1(object):                          # pylint:disable=R0903,R0205
 
     """Class:  Commit1
 
     Description:  Class stub holder for git.gitrepo.active_branch.commit.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -74,14 +74,14 @@ class Commit1(object):
         self.commit = Hexsha1()
 
 
-class Hexsha1(object):
+class Hexsha1(object):                          # pylint:disable=R0903,R0205
 
     """Class:  Hexsha1
 
     Description:  Class stub holder - git.gitrepo.active_branch.commit.hexsha.
 
     Methods:
-        __init
+        __init__
 
     """
 
@@ -98,14 +98,14 @@ class Hexsha1(object):
         self.hexsha = "1234567890abcdef"
 
 
-class Checkout1(object):
+class Checkout1(object):                        # pylint:disable=R0903,R0205
 
     """Class:  Checkout1
 
     Description:  Class stub holder for git.gitrepo.Git.checkout.
 
     Methods:
-        __init
+        __init__
         checkout
 
     """
@@ -120,8 +120,6 @@ class Checkout1(object):
 
         """
 
-        pass
-
     def checkout(self, branch):
 
         """Function:  checkout
@@ -132,8 +130,6 @@ class Checkout1(object):
             branch
 
         """
-
-        pass
 
 
 class UnitTest(unittest.TestCase):

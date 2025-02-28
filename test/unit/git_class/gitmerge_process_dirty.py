@@ -21,13 +21,13 @@ import collections
 
 # Local
 sys.path.append(os.getcwd())
-import git_class
-import version
+import git_class                                # pylint:disable=E0401,C0413
+import version                                  # pylint:disable=E0401,C0413
 
 __version__ = version.__version__
 
 
-class Index(object):
+class Index(object):                            # pylint:disable=R0903,R0205
 
     """Class:  Index
 
@@ -47,8 +47,6 @@ class Index(object):
         Arguments:
 
         """
-
-        pass
 
 
 class Diff(Index):
@@ -77,7 +75,7 @@ class Diff(Index):
 
         """
 
-        super(Diff, self).__init__()
+        super(Diff, self).__init__()                    # pylint:disable=R1725
 
         self.test_type = test_type
         self.arg1 = None
