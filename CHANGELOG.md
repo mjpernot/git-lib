@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on "Keep a Changelog".  This project adheres to Semantic Versioning.
 
 
+## [2.0.0] - 2025-09-25
+Breaking changes
+
+- Updated simplejson=3.19.2
+- Added support for Python 3.13
+- Updated mock==5.2.0
+- Updated python-lib to v4.1.0
+- Dropped support for Python 2.7
+
+### Changed
+- git_class: Removed Python 2.7 code.
+- Documentation changes.
+
+
 ## [1.0.10] - 2025-02-28
 ### Changed
 - Documentation changes.
